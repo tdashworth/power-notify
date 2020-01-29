@@ -1,0 +1,11 @@
+{
+  "@capgemini/generator-cdspackage": {
+    "promptValues": {
+      "adoUrl": "https://dev.azure.com/tdashworth/",
+      "client": "TDAshworth",
+      "package": "PowerNotify",
+      "ciUrl": "https://orgbf55a6b1.crm4.dynamics.com/",
+      "serviceAccountUsername": "admin@crm779385.onmicrosoft.com"
+    }
+  }
+}

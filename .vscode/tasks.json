@@ -1,0 +1,120 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build Package",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"Default\""
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Build Solution",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"BuildSolution\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Generate Model",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"GenerateModel\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Extract Solution",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"ExtractSolution\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Pack Solution",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"PackSolution\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Export Data",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"ExportData\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Stage Data",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"StageData\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Deploy Plugins",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"DeployPlugins\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Deploy Workflow Activities",
+      "command": [
+        "powershell",
+        "-ExecutionPolicy ByPass",
+        "-File build.ps1",
+        "-Target \"DeployWorkflowActivities\"",
+        "-solution=${input:solution}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "solution",
+      "description": "The solution to execute the task for.",
+      "type": "pickString",
+      "options": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "earlyboundtypes": [
+    {
+      "entities": "",
+      "actions": "",
+      "generateOptionsetEnums": true,
+      "generateStateEnums": true,
+      "generateGlobalOptionsets": true,
+      "filename": "PowerNotifyContext.cs",
+      "classNamespace": "TDAshworth.PowerNotify.Model",
+      "serviceContextName": "PowerNotifyContext"
+    }
+  ]
+}
