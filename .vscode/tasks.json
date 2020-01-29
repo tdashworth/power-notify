@@ -114,7 +114,9 @@
       "id": "solution",
       "description": "The solution to execute the task for.",
       "type": "pickString",
-      "options": []
+      "options": [
+        "PowerNotify"
+      ]
     }
   ]
 }
