@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{95e11be9-b441-ea11-a812-000d3a29426f}</WebResourceId>
+  <Name>tda_notification-tray.js</Name>
+  <DisplayName>Notification Tray Scripts</DisplayName>
+  <Description>A set of functions used by the Application Ribbon to open the Notification Tray panel. </Description>
+  <LanguageCode>1033</LanguageCode>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>0.7.0.6</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/tda_notification-trayjs95E11BE9-B441-EA11-A812-000D3A29426F</FileName>
+</WebResource>

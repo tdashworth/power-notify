@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="tda_notificationmethods" localizedName="Notification Methods" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Notification Methods" languagecode="1033" />
+  </displaynames>
+  <options>
+    <option value="751410000">
+      <labels>
+        <label description="Web Push" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="751410001">
+      <labels>
+        <label description="Email" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="751410002">
+      <labels>
+        <label description="Notification Tray" languagecode="1033" />
+      </labels>
+    </option>
+    <option value="751410003">
+      <labels>
+        <label description="Mobile Push" languagecode="1033" />
+      </labels>
+    </option>
+  </options>
+</optionset>

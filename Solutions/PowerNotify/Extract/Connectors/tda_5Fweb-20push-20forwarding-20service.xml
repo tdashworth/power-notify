@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>2cc36572-404c-49bb-80c2-63e13ef72d48</connectorid>
+  <description>A forwarding service for web push notification. This can be updated with your own server and authentication.</description>
+  <displayname>Web Push Forwarding Service</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>tda_5Fweb-20push-20forwarding-20service</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/tda_5Fweb-20push-20forwarding-20service_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/tda_5Fweb-20push-20forwarding-20service_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/tda_5Fweb-20push-20forwarding-20service_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/tda_5Fweb-20push-20forwarding-20service_iconblob.Jpeg</iconblob>
+</Connector>

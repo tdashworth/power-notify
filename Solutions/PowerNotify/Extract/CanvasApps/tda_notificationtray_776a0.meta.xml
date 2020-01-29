@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>tda_notificationtray_776a0</Name>
+  <AppVersion>2020-01-28T10:08:54Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.19121.12.0</CreatedByClientVersion>
+  <MinClientVersion>3.19121.12.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"88bb27f5-f0ed-4748-807e-6a2e5b95e8d2","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.19121.12","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
+  <DisplayName>Notification Tray</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences xsi:nil="true"></AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds"},"dataSources":{"Notification Messages":{"entitySetName":"tda_notificationmessages","logicalName":"tda_notificationmessage"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"}}}}</DatabaseReferences>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"tda_notificationmessage","componenttype":1},{"logicalname":"systemuser","componenttype":1}]}</CdsDependencies>
+  <BackgroundImageUri>/CanvasApps/tda_notificationtray_776a0_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/tda_notificationtray_776a0_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

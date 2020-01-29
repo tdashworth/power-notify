@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{152f25cd-e355-4486-82bf-af39e5fdcb65}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{70b3bb9e-7fa8-490b-89d6-005cd55756dc}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{84a4e66b-78ac-4939-9fee-4295ea9ec091}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{744e97a9-1b1b-47e0-a64b-2f4ffe6c97cf}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="tda_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="tda_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fdbeb858-5e1f-49ce-bb6c-c0b5803c92b6}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{70b3bb9e-7fa8-490b-89d6-005cd55756dc}_section_2" showlabel="false" showbar="false" locklevel="0" id="{e8920a2d-8a42-a875-291b-07e2c348dda4}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{79b79ab8-2e7a-4ed7-c7ce-ad3ae2207ae6}" showlabel="true" colspan="1" auto="false" rowspan="7">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="messages" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{6334d894-c938-c295-95c1-17a983dd6404}">
+                          <parameters>
+                            <ViewId>{A7580307-C0DF-46E1-8E70-4EB4034CE213}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>tda_NotificationMessage_NotificationChann</RelationshipName>
+                            <TargetEntityType>tda_notificationmessage</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{A7580307-C0DF-46E1-8E70-4EB4034CE213},{0DE225E9-ED20-4DA2-B04E-B4D45C68D3D5}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{b352b522-d90a-98a0-27e1-b4069d11a09e}" showlabel="true" colspan="1" auto="false" rowspan="7">
+                        <labels>
+                          <label description="Notification Subscriptions" languagecode="1033" />
+                        </labels>
+                        <control id="subscriptions" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{5946a1c6-7129-218c-7b6a-a3cbcee08c5c}">
+                          <parameters>
+                            <ViewId>{F9304293-A60B-EA11-A811-000D3A86B423}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>tda_NotificationSubscription_Notification</RelationshipName>
+                            <TargetEntityType>tda_notificationsubscription</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{10BFFF12-7D8F-47E7-9A6B-53C78C3874A6},{F9304293-A60B-EA11-A811-000D3A86B423}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem RelationshipName="tda_NotificationMessage_NotificationChann" Sequence="10000" Area="Info" Id="nav_tda_NotificationMessage_NotificationChann" Show="false">
+            <Titles>
+              <Title LCID="1033" Text="Notification Messages" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="tda_NotificationSubscription_Notification" Sequence="10000" Area="Info" Id="nav_tda_NotificationSubscription_Notification" Show="false">
+            <Titles>
+              <Title LCID="1033" Text="Notification Subscriptions" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

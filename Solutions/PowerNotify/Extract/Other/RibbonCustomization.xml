@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="tda.tda_WebPushNotifications.ApplicationRibbon.NotificationTray.CustomAction" Location="Mscrm.GlobalTab.New.Controls._children" Sequence="25">
+      <CommandUIDefinition>
+        <Button Command="tda_WebPushNotifications.ApplicationRibbon.NotificationTray" Id="tda_WebPushNotifications.ApplicationRibbon.NotificationTray" Image32by32="" Image16by16="" LabelText="$LocLabels:tda_WebPushNotifications.ApplicationRibbon.NotificationTray.LabelText" Sequence="25" TemplateAlias="isv" ToolTipTitle="$LocLabels:tda_WebPushNotifications.ApplicationRibbon.NotificationTray.ToolTipTitle" ToolTipDescription="$LocLabels:tda_WebPushNotifications.ApplicationRibbon.NotificationTray.ToolTipDescription" ModernImage="$webresource:tda_NotificationBell.svg" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="tda_WebPushNotifications.ApplicationRibbon.NotificationTray">
+      <EnableRules />
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="NotificationTray.open" Library="$webresource:tda_notification-tray.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="tda_WebPushNotifications.ApplicationRibbon.NotificationTray.LabelText">
+      <Titles>
+        <Title description="Notification Tray" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="tda_WebPushNotifications.ApplicationRibbon.NotificationTray.ToolTipDescription">
+      <Titles>
+        <Title description="Opens a list of notifications store in the notification tray" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="tda_WebPushNotifications.ApplicationRibbon.NotificationTray.ToolTipTitle">
+      <Titles>
+        <Title description="Notification Tray" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

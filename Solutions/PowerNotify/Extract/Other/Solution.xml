@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.1.0.12056" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>PowerNotify</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Power Notify" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="This is an all-in-one solution for notifying your PowerApps users giving them the control they deserve in a distraction filled world. " languagecode="1033" />
+    </Descriptions>
+    <Version>0.7.0.7</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>tdashworth</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="tdashworth" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="tdashworth" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>tda</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>75141</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="1" schemaName="tda_notificationchannel" behavior="0" />
+      <RootComponent type="1" schemaName="tda_notificationmessage" behavior="0" />
+      <RootComponent type="1" schemaName="tda_notificationsubscription" behavior="0" />
+      <RootComponent type="1" schemaName="tda_webpushsubscription" behavior="0" />
+      <RootComponent type="9" schemaName="tda_notificationmethods" behavior="0" />
+      <RootComponent type="20" id="{20be8816-720b-ea11-a811-000d3a86b423}" behavior="0" />
+      <RootComponent type="20" id="{696ef5ae-710b-ea11-a811-000d3a86b423}" behavior="0" />
+      <RootComponent type="20" id="{95e7421e-710b-ea11-a811-000d3a86b423}" behavior="0" />
+      <RootComponent type="29" id="{02394551-b621-ea11-a810-000d3a294639}" behavior="0" />
+      <RootComponent type="50" schemaName=":RibbonDiffXml" behavior="0" />
+      <RootComponent type="60" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" behavior="0" />
+      <RootComponent type="61" schemaName="tda_notification-tray.js" behavior="0" />
+      <RootComponent type="61" schemaName="tda_NotificationBell.svg" behavior="0" />
+      <RootComponent type="61" schemaName="tda_service-worker.js" behavior="0" />
+      <RootComponent type="66" schemaName="tda_tda.webpushnotifications.NotificationSubscriptionView" behavior="0" />
+      <RootComponent type="300" schemaName="tda_notificationtray_776a0" behavior="0" />
+      <RootComponent type="372" id="{2cc36572-404c-49bb-80c2-63e13ef72d48}" schemaName="tda_5Fweb-20push-20forwarding-20service" behavior="0" />
+      <RootComponent type="380" id="{0702974a-6ed9-4626-b721-8371252898aa}" behavior="0" />
+      <RootComponent type="380" id="{28e3262d-b136-ea11-a813-000d3a294bae}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required key="0" type="1" schemaName="environmentvariabledefinition" displayName="Environment Variable Definition" solution="EnvironmentVariables (1.0.2.7)" />
+        <Dependent key="1" type="29" displayName="Notify User when a Message is created" id="{02394551-b621-ea11-a810-000d3a294639}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="60" displayName="account card" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{b028db32-3619-48a5-ac51-cf3f947b0ef3}" />
+        <Dependent key="3" type="60" displayName="Information" parentDisplayName="Notification Message" id="{99a7fd16-5445-4f64-a67d-2d97c0d4208b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="4" type="60" displayName="contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{707fc57b-c5e6-471b-a180-e37ed28a38e2}" />
+        <Dependent key="3" type="60" displayName="Information" parentDisplayName="Notification Message" id="{99a7fd16-5445-4f64-a67d-2d97c0d4208b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="5" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.1912.3025)" />
+        <Dependent key="6" type="60" displayName="User" parentDisplayName="User" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="7" type="66" schemaName="MscrmControls.AutoComplete.AutoCompleteControl" displayName="MscrmControls.AutoComplete.AutoCompleteControl" solution="CustomControlsCore (9.1.0000.12056)" />
+        <Dependent key="6" type="60" displayName="User" parentDisplayName="User" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>
