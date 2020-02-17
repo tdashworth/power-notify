@@ -1862,7 +1862,7 @@
           <Type>lookup</Type>
           <Name>regardingobjectid</Name>
           <LogicalName>regardingobjectid</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
+          <RequiredLevel>recommended</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
           <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>

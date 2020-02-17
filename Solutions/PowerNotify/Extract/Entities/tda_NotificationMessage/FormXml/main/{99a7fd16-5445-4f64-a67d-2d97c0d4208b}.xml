@@ -12,15 +12,23 @@
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
-            <column width="50%">
+            <column width="34%">
               <sections>
-                <section showlabel="true" showbar="false" IsUserDefined="0" id="{450cbdf2-e064-4290-8ee7-0e6dd4bc0521}" name="Content">
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{450cbdf2-e064-4290-8ee7-0e6dd4bc0521}" name="People">
                   <labels>
-                    <label description="Content" languagecode="1033" />
+                    <label description="People" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{8118a4a9-dc80-460d-ad8e-8d3fe861d4d8}" showlabel="true" locklevel="0">
+                      <cell id="{ccb81164-4206-48b5-97ce-176f7cecca54}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="To" languagecode="1033" />
+                        </labels>
+                        <control id="to" classid="{CBFB742C-14E7-4A17-96BB-1A13F7F64AA2}" datafieldname="to" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba86f54a-a7c9-464c-948b-7ca4e8b5b27e}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Owner" languagecode="1033" />
                         </labels>
@@ -35,6 +43,17 @@
                         <control id="tda_notificationchannel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="tda_notificationchannel" disabled="false" />
                       </cell>
                     </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="Content" id="a4254317-c3e8-4dfa-b5f7-09f24fdd3520" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" height="auto">
+                  <labels>
+                    <label description="Content" languagecode="1033" />
+                  </labels>
+                  <rows>
                     <row>
                       <cell id="{57c76eec-3e6b-4d81-9ae2-5cd3440fd541}">
                         <labels>
@@ -43,18 +62,25 @@
                         <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" />
                       </cell>
                     </row>
-                    <row>
+                    <row height="auto">
                       <cell id="{1f768d5a-af95-4d8f-acda-733f6b49ba7b}" showlabel="true" locklevel="0" auto="true" rowspan="5">
                         <labels>
                           <label description="Description" languagecode="1033" />
                         </labels>
-                        <control id="description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" disabled="false" />
+                        <control id="description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" disabled="false" uniqueid="{2a064c95-e711-7844-861d-433d08daac21}" />
                       </cell>
                     </row>
-                    <row />
-                    <row />
-                    <row />
-                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="Context" id="dee48398-0fde-4943-b85a-70bed06b7a0c" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Context" languagecode="1033" />
+                  </labels>
+                  <rows>
                     <row>
                       <cell id="{e173b345-80a3-4c42-8ec7-d2532d9659db}" showlabel="true" locklevel="0">
                         <labels>
@@ -80,24 +106,6 @@
                 </section>
               </sections>
             </column>
-            <column width="50%">
-              <sections>
-                <section name="Options" id="a4254317-c3e8-4dfa-b5f7-09f24fdd3520" IsUserDefined="0" locklevel="1" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
-                  <labels>
-                    <label description="Options" languagecode="1033" />
-                  </labels>
-                  <rows>
-                    <row>
-                      <cell showlabel="false" locklevel="0" id="{e69cd8bb-af4f-4b6d-9705-e053a1d350c1}">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
-                  </rows>
-                </section>
-              </sections>
-            </column>
           </columns>
         </tab>
       </tabs>
@@ -115,6 +123,16 @@
                 <label description="Owner" languagecode="1033" />
               </labels>
               <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+            <cell id="{6cd742de-58b7-4ced-aadd-9b1fb3102947}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9f507bba-a4a1-4b19-a7ac-7dde36d02e80}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
             </cell>
           </row>
         </rows>
@@ -140,6 +158,36 @@
           </row>
         </rows>
       </footer>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
       <DisplayConditions Order="0" FallbackForm="true" />
     </form>
     <IsCustomizable>1</IsCustomizable>
