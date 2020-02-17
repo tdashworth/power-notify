@@ -20,19 +20,16 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{ccb81164-4206-48b5-97ce-176f7cecca54}" showlabel="true" locklevel="0" visible="false">
+                      <cell id="{ccb81164-4206-48b5-97ce-176f7cecca54}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="To" languagecode="1033" />
                         </labels>
-                        <control id="to" classid="{CBFB742C-14E7-4A17-96BB-1A13F7F64AA2}" datafieldname="to" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{ba86f54a-a7c9-464c-948b-7ca4e8b5b27e}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Owner" languagecode="1033" />
-                        </labels>
-                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                        <control id="to" classid="{CBFB742C-14E7-4A17-96BB-1A13F7F64AA2}" datafieldname="to" disabled="false" uniqueid="{d5a8bed2-b3ce-dc62-134a-08be9ba6443c}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
                       </cell>
                     </row>
                     <row>
@@ -62,7 +59,7 @@
                         <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" />
                       </cell>
                     </row>
-                    <row height="auto">
+                    <row>
                       <cell id="{1f768d5a-af95-4d8f-acda-733f6b49ba7b}" showlabel="true" locklevel="0" auto="true" rowspan="5">
                         <labels>
                           <label description="Description" languagecode="1033" />
@@ -124,12 +121,12 @@
               </labels>
               <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
             </cell>
-            <cell id="{6cd742de-58b7-4ced-aadd-9b1fb3102947}">
+            <cell id="{6cd742de-58b7-4ced-aadd-9b1fb3102947}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{9f507bba-a4a1-4b19-a7ac-7dde36d02e80}">
+            <cell id="{9f507bba-a4a1-4b19-a7ac-7dde36d02e80}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
@@ -159,7 +156,7 @@
         </rows>
       </footer>
       <Navigation>
-        <NavBar />
+        <NavBar></NavBar>
         <NavBarAreas>
           <NavBarArea Id="Info">
             <Titles>
@@ -188,6 +185,7 @@
           </NavBarArea>
         </NavBarAreas>
       </Navigation>
+      <controlDescriptions />
       <DisplayConditions Order="0" FallbackForm="true" />
     </form>
     <IsCustomizable>1</IsCustomizable>
