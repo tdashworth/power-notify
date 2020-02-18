@@ -195,7 +195,18 @@ void ExportData(DirectoryPath extractFolder, FilePath exportConfigPath) {
   XrmExportData(new DataMigrationExportSettings(GetConnectionString(solution, false), exportConfigPath));
 }
 
-void PackSolution(string projectFolder, string solutionName, string solutionVersion) {    
+void PackSolution(string projectFolder, string solutionName, string solutionVersion) {
+  var changedSolutions = Argument<string>("solutions", "");
+  if (!String.IsNullOrEmpty(solutionVersion) && !String.IsNullOrEmpty(changedSolutions) && changedSolutions.Contains(solutionName)) {
+    var versionParts = solutionVersion.Split('.');
+    versionParts[2] = (int.Parse(versionParts[2]) + 1).ToString();
+    XrmUpdateSolutionVersion(
+      GetConnectionString(solution, false), 
+      solutionName, 
+      String.Join(".", versionParts)
+    );
+  }
+     
   SolutionPackagerPack(new SolutionPackagerPackSettings(
     Directory(projectFolder).Path.CombineWithFilePath($"bin\\Release\\{solutionName}.zip"),
     Directory(projectFolder).Path.Combine("Extract"),

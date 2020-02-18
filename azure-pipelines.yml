@@ -5,30 +5,35 @@ pool:
     - visualstudio
     - vstest
 steps:
-  - powershell: |
-       $comparisonType = "CurrentCultureIgnoreCase"
-       $resultArray = git show --name-only
-       $solutionList = ""
-   
-       foreach ($_ in $resultArray)
-       {
-           if ($_.StartsWith("Solutions") -and $_.Contains("Extract")) 
-           {
-             $solutionName = $_.Split("/")[1]
-
-             if (!$solutionList.Contains($solutionName)) 
-             {
-               $solutionList += $solutionName + ";"
-               Write-Host "##vso[build.addbuildtag]$solutionName" 
-             }
-           }
-       }
+  - task: PowerShell@2
     displayName: 'Configure Build Orchestration'
-  - powershell: >-
-      Invoke-Expression "&$(Build.SourcesDirectory)\build.ps1 
-      -Target Default   
-      -Verbosity Diagnostic"
+    inputs:
+      targetType: 'inline'
+      script: |
+        $comparisonType = "CurrentCultureIgnoreCase"
+        $resultArray = git show --name-only
+        $solutionList = ""
+    
+        foreach ($_ in $resultArray)
+        {
+            if ($_.StartsWith("Solutions") -and $_.Contains("Extract")) 
+            {
+              $solutionName = $_.Split("/")[1]
+
+              if (!$solutionList.Contains($solutionName)) 
+              {
+                $solutionList += $solutionName + ";"
+                Write-Host "##vso[build.addbuildtag]$solutionName" 
+              }
+            }
+        }
+
+        Write-Host "##vso[task.setvariable variable=solutionList;]$solutionList"       
+  - task: PowerShell@2
     displayName: Cake - Build Package
+    inputs:
+      filePath: '.\build.ps1'
+      arguments: '-Target Default -solutions="$(solutionList)" -solutionVersion="$(Build.BuildNumber)"'
     env:
       CAKE_DYNAMICS_USERNAME: $(dynamicsUsername)
       CAKE_DYNAMICS_PASSWORD: $(dynamicsPassword)
