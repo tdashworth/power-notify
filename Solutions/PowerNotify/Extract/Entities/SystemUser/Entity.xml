@@ -41,7 +41,7 @@
             <displayname description="Web Push Subscriptions" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="" languagecode="1033" />
+            <Description description="A JSON array of Web Push Subscriptions. " languagecode="1033" />
           </Descriptions>
         </attribute>
       </attributes>
