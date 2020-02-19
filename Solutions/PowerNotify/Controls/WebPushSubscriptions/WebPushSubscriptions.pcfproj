@@ -8,8 +8,8 @@
   <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Pcf.props" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Pcf.props')"/>
   
   <PropertyGroup>
-    <Name>web-push-notifications</Name>
-    <ProjectGuid>d5c287d3-ae7a-44d5-95bd-c8e4899919ae</ProjectGuid>
+    <Name>WebPushSubscriptions</Name>
+    <ProjectGuid>2fb1a41d-02ab-43bf-833f-16a86305c99a</ProjectGuid>
     <OutputPath>$(MSBuildThisFileDirectory)out\controls</OutputPath>
   </PropertyGroup>
 
