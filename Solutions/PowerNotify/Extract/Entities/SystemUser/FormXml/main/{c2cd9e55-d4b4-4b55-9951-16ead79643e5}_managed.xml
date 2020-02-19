@@ -332,36 +332,13 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{38e5dcce-d187-0aed-575d-c71cc0e757c4}" showlabel="false" colspan="1" auto="false" rowspan="6" ordinalvalue="10000">
+                      <cell id="{bed0f290-cc61-4ad5-9d71-153b88e76a7f}" showlabel="false" locklevel="0" ordinalvalue="10000">
                         <labels>
-                          <label description="Web Push Subscriptions " languagecode="1033" />
+                          <label description="Web Push Subscriptions" languagecode="1033" />
                         </labels>
-                        <control id="tda_notifications_webPushSubscription" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true" uniqueid="{c6272cad-8ad0-2dc5-ed74-8d39207d2328}">
-                          <parameters>
-                            <ViewId>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewId>
-                            <IsUserView>false</IsUserView>
-                            <RelationshipName>user_tda_webpushsubscription</RelationshipName>
-                            <TargetEntityType>tda_webpushsubscription</TargetEntityType>
-                            <AutoExpand>Fixed</AutoExpand>
-                            <EnableQuickFind>false</EnableQuickFind>
-                            <EnableViewPicker>false</EnableViewPicker>
-                            <ViewIds>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewIds>
-                            <EnableJumpBar>false</EnableJumpBar>
-                            <ChartGridMode>All</ChartGridMode>
-                            <VisualizationId />
-                            <IsUserChart>false</IsUserChart>
-                            <EnableChartPicker>true</EnableChartPicker>
-                            <RecordsPerPage>4</RecordsPerPage>
-                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
-                          </parameters>
-                        </control>
+                        <control id="tda_webpushsubscriptions" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="tda_webpushsubscriptions" disabled="false" uniqueid="{51d6a5cb-c780-00a5-9c58-20668c8ed77a}" />
                       </cell>
                     </row>
-                    <row />
-                    <row />
-                    <row />
-                    <row />
-                    <row />
                   </rows>
                 </section>
               </sections>
@@ -421,6 +398,9 @@
           </row>
         </rows>
       </footer>
+      <Navigation>
+        <NavBar />
+      </Navigation>
       <header id="{28f239cc-22c0-4afe-a433-b2aba3b340f9}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
         <rows>
           <row>
@@ -524,63 +504,28 @@
             </parameters>
           </customControl>
         </controlDescription>
-        <controlDescription forControl="{c6272cad-8ad0-2dc5-ed74-8d39207d2328}">
-          <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+        <controlDescription forControl="{51d6a5cb-c780-00a5-9c58-20668c8ed77a}">
+          <customControl id="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}">
             <parameters>
-              <ViewId>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewId>
-              <IsUserView>false</IsUserView>
-              <RelationshipName>user_tda_webpushsubscription</RelationshipName>
-              <TargetEntityType>tda_webpushsubscription</TargetEntityType>
-              <AutoExpand>Fixed</AutoExpand>
-              <EnableQuickFind>false</EnableQuickFind>
-              <EnableViewPicker>false</EnableViewPicker>
-              <ViewIds>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewIds>
-              <EnableJumpBar>false</EnableJumpBar>
-              <ChartGridMode>All</ChartGridMode>
-              <VisualizationId />
-              <IsUserChart>false</IsUserChart>
-              <EnableChartPicker>true</EnableChartPicker>
-              <RecordsPerPage>4</RecordsPerPage>
-              <HeaderColorCode>#F3F3F3</HeaderColorCode>
+              <datafieldname>tda_webpushsubscriptions</datafieldname>
             </parameters>
           </customControl>
-          <customControl formFactor="0" name="tda_tda.webpushnotifications.NotificationSubscriptionView">
+          <customControl formFactor="0" name="tda_PowerNotify.WebPushSubscriptions">
             <parameters>
-              <data-set name="notificationSubscriptions">
-                <ViewId>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewId>
-                <tda_SubscriptionObject>tda_subscriptionobject</tda_SubscriptionObject>
-                <IsUserView>false</IsUserView>
-                <RelationshipName>user_tda_webpushsubscription</RelationshipName>
-                <TargetEntityType>tda_webpushsubscription</TargetEntityType>
-                <EnableViewPicker>false</EnableViewPicker>
-                <FilteredViewIds>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</FilteredViewIds>
-              </data-set>
+              <subscriptions>tda_webpushsubscriptions</subscriptions>
+              <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
             </parameters>
           </customControl>
-          <customControl formFactor="1" name="tda_tda.webpushnotifications.NotificationSubscriptionView">
+          <customControl formFactor="1" name="tda_PowerNotify.WebPushSubscriptions">
             <parameters>
-              <data-set name="notificationSubscriptions">
-                <ViewId>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewId>
-                <tda_SubscriptionObject>tda_subscriptionobject</tda_SubscriptionObject>
-                <IsUserView>false</IsUserView>
-                <RelationshipName>user_tda_webpushsubscription</RelationshipName>
-                <TargetEntityType>tda_webpushsubscription</TargetEntityType>
-                <EnableViewPicker>false</EnableViewPicker>
-                <FilteredViewIds>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</FilteredViewIds>
-              </data-set>
+              <subscriptions>tda_webpushsubscriptions</subscriptions>
+              <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
             </parameters>
           </customControl>
-          <customControl formFactor="2" name="tda_tda.webpushnotifications.NotificationSubscriptionView">
+          <customControl formFactor="2" name="tda_PowerNotify.WebPushSubscriptions">
             <parameters>
-              <data-set name="notificationSubscriptions">
-                <ViewId>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</ViewId>
-                <tda_SubscriptionObject>tda_subscriptionobject</tda_SubscriptionObject>
-                <IsUserView>false</IsUserView>
-                <RelationshipName>user_tda_webpushsubscription</RelationshipName>
-                <TargetEntityType>tda_webpushsubscription</TargetEntityType>
-                <EnableViewPicker>false</EnableViewPicker>
-                <FilteredViewIds>{A9D2D322-6B78-4F4E-A746-8B538DC2F019}</FilteredViewIds>
-              </data-set>
+              <subscriptions>tda_webpushsubscriptions</subscriptions>
+              <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
             </parameters>
           </customControl>
         </controlDescription>

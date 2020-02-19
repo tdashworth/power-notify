@@ -3,7 +3,7 @@ import { IViewProps } from "./ViewHelper";
 
 // tslint:disable-next-line: function-name
 export default function View(props: IViewProps) {
-  // 1. Support but no subscriptions
+  // 1. Supported but no subscriptions
   // 2. Supported and subscriptions but not local
   // 3. Supported and subscriptions and local
   // 4. Not supported but with subscriptions
@@ -11,12 +11,17 @@ export default function View(props: IViewProps) {
 
   const s = props.subscriptions.length === 1 ? "" : "s";
 
-  const message =
+  const currentSubscriptionsMessage =
     props.subscriptions.length === 0
-      ? `You are not currently subscribed. Click below to get notified through this browser.`
+      ? `You are not currently subscribed.`
+      : `You have ${props.subscriptions.length} active subscription${s}.`;
+
+  const subscribeMessage =
+    props.localSubscription !== null
+      ? "One of which is this browser. To stop recieving them here, click 'Unsubscribe' below."
       : props.serviceWorker == null
-      ? `You have ${props.subscriptions.length} active subscription${s}. You can't subscribe this browser as it's not supported.`
-      : `You have ${props.subscriptions.length} active subscription${s}. Click below to get notified through this browser.`;
+      ? `You can't subscribe this browser as it's not supported.`
+      : `Click 'Subscribe' below to get notified through this browser.`;
 
   const localSubscriptionButton =
     props.serviceWorker == null ? (
@@ -27,7 +32,7 @@ export default function View(props: IViewProps) {
       <button onClick={props.subscribe}>Subscribe</button>
     ) : (
       // Supported and not yet subscribed
-      <button onClick={props.unsubscribe}>Unsubcribe</button>
+      <button onClick={props.unsubscribe}>Unsubscribe</button>
     );
 
   const allSubscriptionsButton =
@@ -38,7 +43,9 @@ export default function View(props: IViewProps) {
 
   return (
     <>
-      <p>{message}</p>
+      <p>
+        {currentSubscriptionsMessage} {subscribeMessage}
+      </p>
       {localSubscriptionButton}
       {allSubscriptionsButton}
     </>
