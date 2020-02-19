@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FD3CAA3F-296C-4ECB-A6E9-A4A8CA3E15B6}"
 EndProject
@@ -32,13 +32,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDAshworth.PowerNotify.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDAshworth.PowerNotify.Container", "Common\TDAshworth.PowerNotify.Container\TDAshworth.PowerNotify.Container.csproj", "{F9E5EF62-5BDF-4E36-8027-D265754B56C7}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TDAshworth.PowerNotify.Model", "Common\TDAshworth.PowerNotify.Model\TDAshworth.PowerNotify.Model.shproj", "{9903C7AB-FF17-4FE6-AA49-F4B429847BCA}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TDAshworth.PowerNotify.Model", "Common\TDAshworth.PowerNotify.Model\TDAshworth.PowerNotify.Model.shproj", "{70363B14-5D32-4BD6-AA74-A1CA3373C087}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Common\TDAshworth.PowerNotify.BusinessLogic\TDAshworth.PowerNotify.BusinessLogic.projitems*{2b1ef6de-63cc-4b7e-9bf6-5d9b4c0afded}*SharedItemsImports = 13
 		Common\TDAshworth.PowerNotify.Repositories\TDAshworth.PowerNotify.Repositories.projitems*{56d657e2-2db7-4489-ad26-ca2e147836c6}*SharedItemsImports = 13
-		Common\TDAshworth.PowerNotify.Model\TDAshworth.PowerNotify.Model.projitems*{9903c7ab-ff17-4fe6-aa49-f4b429847bca}*SharedItemsImports = 13
+		Common\TDAshworth.PowerNotify.Model\TDAshworth.PowerNotify.Model.projitems*{70363b14-5d32-4bd6-aa74-a1ca3373c087}*SharedItemsImports = 13
 		Common\TDAshworth.PowerNotify.BusinessLogic\TDAshworth.PowerNotify.BusinessLogic.projitems*{f9e5ef62-5bdf-4e36-8027-d265754b56c7}*SharedItemsImports = 4
 		Common\TDAshworth.PowerNotify.Model\TDAshworth.PowerNotify.Model.projitems*{f9e5ef62-5bdf-4e36-8027-d265754b56c7}*SharedItemsImports = 4
 		Common\TDAshworth.PowerNotify.Repositories\TDAshworth.PowerNotify.Repositories.projitems*{f9e5ef62-5bdf-4e36-8027-d265754b56c7}*SharedItemsImports = 4
@@ -89,7 +89,7 @@ Global
 		{F9924F3A-AF7A-408B-BF7E-4833CA103E70} = {FD3CAA3F-296C-4ECB-A6E9-A4A8CA3E15B6}
 		{FD08C829-9610-4141-8C8F-0CDB7DCDDB57} = {FD3CAA3F-296C-4ECB-A6E9-A4A8CA3E15B6}
 		{F9E5EF62-5BDF-4E36-8027-D265754B56C7} = {2AD54360-54F9-4CCD-8261-2ED80D5E8F4C}
-		{9903C7AB-FF17-4FE6-AA49-F4B429847BCA} = {2AD54360-54F9-4CCD-8261-2ED80D5E8F4C}
+		{70363B14-5D32-4BD6-AA74-A1CA3373C087} = {2AD54360-54F9-4CCD-8261-2ED80D5E8F4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D6A7645-2C64-4610-BC84-6AD17AA98B71}
