@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{7aca038c-8f85-4e5c-b42a-836d2176ed59}" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Friendly Name" languagecode="1033" />
                         </labels>
                         <control id="tda_friendlyname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="tda_friendlyname" disabled="true" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{19db0030-5528-45f9-9514-cbf4a12dd2a1}" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{106a0fd9-5058-4069-8921-180821bc9b3a}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Subscription Object" languagecode="1033" />
                         </labels>
                         <control id="tda_subscriptionobject" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="tda_subscriptionobject" disabled="true" />
                       </cell>

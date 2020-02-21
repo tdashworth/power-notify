@@ -64,7 +64,7 @@
                     <row>
                       <cell id="{224ca582-cff5-45f7-a3b4-475acb89aa97}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                       </cell>
@@ -72,7 +72,7 @@
                     <row>
                       <cell id="{944ce04b-3d08-2e20-27e9-31873de09c39}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Channel" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationchannel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="tda_notificationchannel" disabled="false" />
                       </cell>
@@ -80,7 +80,7 @@
                     <row>
                       <cell id="{23d7e0a7-28bb-472a-49cb-62c2c526064e}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Method" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationmethod" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="tda_notificationmethod" disabled="false" />
                       </cell>
@@ -95,7 +95,7 @@
                     <row>
                       <cell id="{14d53e40-b277-4a5f-9c0f-1fe2325bfc02}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="tda_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="tda_name" disabled="false" uniqueid="{66916ae0-9672-9e92-e861-930c3864b9c3}" />
                       </cell>

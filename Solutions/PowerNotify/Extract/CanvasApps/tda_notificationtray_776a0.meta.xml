@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>tda_notificationtray_776a0</Name>
-  <AppVersion>2020-02-17T15:45:52Z</AppVersion>
+  <AppVersion>2020-02-21T09:40:17Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.20021.27.0</CreatedByClientVersion>
   <MinClientVersion>3.20021.27.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"94f6cf28-4c85-40d9-a4e9-5dc039858d96","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.20021.27","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true"}</Tags>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"20200221T094017Z-3.20021.27.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.20021.27","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>

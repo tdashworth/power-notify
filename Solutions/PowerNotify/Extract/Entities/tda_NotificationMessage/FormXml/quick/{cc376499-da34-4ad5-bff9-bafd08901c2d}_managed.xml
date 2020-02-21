@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{bde25962-0c1f-4d92-bbe4-4e9b941d2e3c}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{35fbf832-61c5-4045-b5bf-593838ab1143}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Channel" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationchannel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="tda_notificationchannel" disabled="false" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{257067c4-c078-48a6-bf7d-bde7a0001f88}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Subject" languagecode="1033" />
                         </labels>
                         <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" />
                       </cell>
@@ -46,7 +46,7 @@
                     <row>
                       <cell id="{e7e29a0e-29de-4e98-bb41-56afe5ad6e1e}" showlabel="true" locklevel="0" auto="true">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Description" languagecode="1033" />
                         </labels>
                         <control id="description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" disabled="false" />
                       </cell>
@@ -54,7 +54,7 @@
                     <row>
                       <cell id="{96490481-9c5c-484e-8374-7548ed80ef6a}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Regarding" languagecode="1033" />
                         </labels>
                         <control id="regardingobjectid" classid="{F3015350-44A2-4aa0-97B5-00166532B5E9}" datafieldname="regardingobjectid" />
                       </cell>
@@ -69,7 +69,7 @@
                     <row>
                       <cell id="{4c753df0-cb0f-480e-a40e-903fbcb9e6da}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Activity Status" languagecode="1033" />
                         </labels>
                         <control id="statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" />
                       </cell>
@@ -77,7 +77,7 @@
                     <row>
                       <cell id="{fc60b0f7-28c5-4714-b8ba-2f67cb8cf6a5}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Priority" languagecode="1033" />
                         </labels>
                         <control id="prioritycode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="prioritycode" />
                       </cell>
@@ -85,7 +85,7 @@
                     <row>
                       <cell id="{bcde9503-8aea-49b5-b8b2-da73d18226aa}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Ignore - Due Date" languagecode="1033" />
                         </labels>
                         <control id="scheduledend" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="scheduledend" />
                       </cell>

@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{741a4899-e2ca-4863-a7de-c99c3a556870}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{225982aa-90f0-452d-8476-04735e93bc77}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Channel" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationchannel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="tda_notificationchannel" disabled="false" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{6142cbae-5735-4ada-aab9-993d58be0ba8}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Method" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationmethod" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="tda_notificationmethod" disabled="false" />
                       </cell>
@@ -70,7 +70,7 @@
             </cell>
             <cell id="{ffb13019-75cc-4ce8-b327-c3709b03b63e}" showlabel="true" locklevel="0">
               <labels>
-                <label description="" languagecode="1033" />
+                <label description="Name" languagecode="1033" />
               </labels>
               <control id="header_tda_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="tda_name" disabled="false" />
             </cell>
