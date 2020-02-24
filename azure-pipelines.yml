@@ -27,7 +27,8 @@ steps:
               }
             }
         }
-
+        
+        Write-Host "Updated solutions: " $solutionList
         Write-Host "##vso[task.setvariable variable=solutionList;]$solutionList"       
   - task: PowerShell@2
     displayName: Cake - Build Package

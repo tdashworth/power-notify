@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.13228" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.13533" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>PowerNotify</UniqueName>
     <LocalizedNames>
@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="This is an all-in-one solution for notifying your PowerApps users giving them the control they deserve in a distraction filled world. " languagecode="1033" />
     </Descriptions>
-    <Version>0.1.14.0</Version>
+    <Version>0.1.18.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>tdashworth</UniqueName>
@@ -118,11 +118,11 @@
         <Dependent key="3" type="60" displayName="Information" parentDisplayName="Notification Message" id="{99a7fd16-5445-4f64-a67d-2d97c0d4208b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="5" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2001.3007)" />
+        <Required key="5" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2001.4003)" />
         <Dependent key="6" type="60" displayName="User" parentDisplayName="User" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="7" type="66" schemaName="MscrmControls.AutoComplete.AutoCompleteControl" displayName="MscrmControls.AutoComplete.AutoCompleteControl" solution="CustomControlsCore (9.1.0000.13228)" />
+        <Required key="7" type="66" schemaName="MscrmControls.AutoComplete.AutoCompleteControl" displayName="MscrmControls.AutoComplete.AutoCompleteControl" solution="CustomControlsCore (9.1.0000.13533)" />
         <Dependent key="6" type="60" displayName="User" parentDisplayName="User" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" />
       </MissingDependency>
     </MissingDependencies>
