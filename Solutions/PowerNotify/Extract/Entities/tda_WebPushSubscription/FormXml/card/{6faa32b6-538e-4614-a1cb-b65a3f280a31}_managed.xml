@@ -40,7 +40,7 @@
                     <row>
                       <cell id="{3ad3ba52-b879-4764-b8c7-b3a86566d0fc}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Status Reason" languagecode="1033" />
                         </labels>
                         <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                       </cell>
@@ -65,7 +65,7 @@
                     <row>
                       <cell id="{b7e1b331-0e22-4e35-9025-473d9b5c4793}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Friendly Name" languagecode="1033" />
                         </labels>
                         <control id="tda_friendlyname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="tda_friendlyname" disabled="false" />
                       </cell>
@@ -73,7 +73,7 @@
                     <row>
                       <cell id="{6c0544b9-d88a-19b6-840e-4aca93c9498d}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Subscription Object" languagecode="1033" />
                         </labels>
                         <control id="tda_subscriptionobject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="tda_subscriptionobject" disabled="false" />
                       </cell>
@@ -88,13 +88,13 @@
                     <row>
                       <cell id="{ac53ce76-7a80-496f-8a8b-ab67147d435a}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                       </cell>
                       <cell id="{2c4decfc-767e-483c-a18a-f9daaa6e38ef}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Created On" languagecode="1033" />
                         </labels>
                         <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                       </cell>

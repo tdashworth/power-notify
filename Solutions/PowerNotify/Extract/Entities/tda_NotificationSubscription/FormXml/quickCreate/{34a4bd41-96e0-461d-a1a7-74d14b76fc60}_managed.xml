@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{629c8d55-9bd6-e925-1379-dbe6414c743e}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Channel" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationchannel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="tda_notificationchannel" disabled="false" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{ce8468cd-c049-6017-0151-752b4bba8815}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Method" languagecode="1033" />
                         </labels>
                         <control id="tda_notificationmethod" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="tda_notificationmethod" disabled="false" />
                       </cell>

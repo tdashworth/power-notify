@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{744e97a9-1b1b-47e0-a64b-2f4ffe6c97cf}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="tda_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="tda_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{fdbeb858-5e1f-49ce-bb6c-c0b5803c92b6}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -45,7 +45,7 @@
                     <row>
                       <cell id="{79b79ab8-2e7a-4ed7-c7ce-ad3ae2207ae6}" showlabel="true" colspan="1" auto="false" rowspan="7">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Notification Messages" languagecode="1033" />
                         </labels>
                         <control id="messages" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{6334d894-c938-c295-95c1-17a983dd6404}">
                           <parameters>
