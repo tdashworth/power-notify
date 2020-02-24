@@ -10,6 +10,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
+        git show --name-only
         $comparisonType = "CurrentCultureIgnoreCase"
         $resultArray = git show --name-only
         $solutionList = ""
