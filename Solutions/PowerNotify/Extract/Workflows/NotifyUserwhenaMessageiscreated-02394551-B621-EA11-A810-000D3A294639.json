@@ -443,7 +443,7 @@
                   "type": "SetVariable",
                   "inputs": {
                     "name": "Regarding Record URL",
-                    "value": "@{first(split(first(outputs('Get_Default_App_Ids')?['body/value'])?['@odata.id'],'/api/'))\n}/main.aspx?appid=@{first(\n  first(\n    body('Get_Default_App_Ids')?['value']\n  )?['environmentvariabledefinition_environmentvariablevalue']\n)?['value']}&pagetype=entityrecord&etn=@{substring(triggerOutputs()?['body/_regardingobjectid_type'], 0, sub(length(triggerOutputs()?['body/_regardingobjectid_type']), 1))}&id=@{triggerOutputs()?['body/_regardingobjectid_value']}"
+                    "value": "@{first(split(first(outputs('Get_Default_App_Ids')?['body/value'])?['@odata.id'],'/api/'))\n}/main.aspx?appid=@{if(\n  greater(\n    length(\n      first(\n        body('Get_Default_App_Ids')?['value']\n      )?['environmentvariabledefinition_environmentvariablevalue']\n    ),\n    0\n  ),\n  first(\n    first(\n      body('Get_Default_App_Ids')?['value']\n    )?['environmentvariabledefinition_environmentvariablevalue']\n  )?['value'],\n  first(\n    body('Get_Default_App_Ids')?['value']\n  )?['defaultvalue']\n)}&pagetype=entityrecord&etn=@{substring(triggerOutputs()?['body/_regardingobjectid_type'], 0, sub(length(triggerOutputs()?['body/_regardingobjectid_type']), 1))}&id=@{triggerOutputs()?['body/_regardingobjectid_value']}"
                   }
                 }
               },
@@ -459,7 +459,7 @@
                     "type": "SetVariable",
                     "inputs": {
                       "name": "Regarding Record URL",
-                      "value": "@{first(split(first(outputs('Get_Default_App_Ids')?['body/value'])?['@odata.id'],'/api/'))\n}/main.aspx?appid=@{first(\r\n  first(\r\n    body('Get_Default_App_Ids')?['value']\r\n  )?['environmentvariabledefinition_environmentvariablevalue']\r\n)?['value']}"
+                      "value": "@{first(split(first(outputs('Get_Default_App_Ids')?['body/value'])?['@odata.id'],'/api/'))\n}/main.aspx?appid=@{if(\r\n  greater(\r\n    length(\r\n      first(\r\n        body('Get_Default_App_Ids')?['value']\r\n      )?['environmentvariabledefinition_environmentvariablevalue']\r\n    ),\r\n    0\r\n  ),\r\n  first(\r\n    first(\r\n      body('Get_Default_App_Ids')?['value']\r\n    )?['environmentvariabledefinition_environmentvariablevalue']\r\n  )?['value'],\r\n  first(\r\n    body('Get_Default_App_Ids')?['value']\r\n  )?['defaultvalue']\r\n)}"
                     }
                   }
                 }

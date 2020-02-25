@@ -71,16 +71,27 @@ export async function getApplicationServerKey(
   webAPI: ComponentFramework.WebApi
 ) {
   const schemaName = "tda_WebPushPublicKey";
-  const valueResult = await webAPI.retrieveMultipleRecords(
-    "environmentvariablevalue",
-    `?$filter=EnvironmentVariableDefinitionId/schemaname eq '${schemaName}' and statecode eq 0&$top=1`
-  );
+  let valueResult = await webAPI
+    .retrieveMultipleRecords(
+      "environmentvariablevalue",
+      `?$filter=EnvironmentVariableDefinitionId/schemaname eq '${schemaName}' and statecode eq 0&$top=1`
+    )
+    .then(result => result.entities[0] && result.entities[0].value);
 
-  if (valueResult.entities.length !== 1) {
+  if (!valueResult) {
+    valueResult = await webAPI
+      .retrieveMultipleRecords(
+        "environmentvariabledefinition",
+        `?$filter=schemaname eq '${schemaName}' and statecode eq 0&$top=1`
+      )
+      .then(result => result.entities[0] && result.entities[0].defaultvalue);
+  }
+
+  if (!valueResult) {
     throw new Error("Application server key was unretrievable.");
   }
 
-  return valueResult.entities[0].value as string;
+  return valueResult as string;
 }
 
 export async function getLocalSubscription(
@@ -121,7 +132,7 @@ export async function getViewSubscriptions(subscriptions: DataSet) {
     const raw = subscriptions.records[id].getFormattedValue(
       "tda_SubscriptionObject"
     );
-    
+
     const object = JSON.parse(raw) as PushSubscription;
     subscriptionRecords.push({ id, object });
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="tda.webpushnotifications" constructor="NotificationSubscriptionView" version="0.0.4" display-name-key="Notification Subscription View" description-key="Notification Subscription View description" control-type="standard">
+  <control namespace="tda.webpushnotifications" constructor="NotificationSubscriptionView" version="0.0.6" display-name-key="Notification Subscription View" description-key="Notification Subscription View description" control-type="standard">
     <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
     <data-set name="notificationSubscriptions" display-name-key="List of Notification Subscriptions">
       <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->

@@ -3,7 +3,7 @@
   <SchemaName>tda_DefaultAppId</SchemaName>
   <IsRequired>0</IsRequired>
   <Type>100000000</Type>
-  <DefaultValue></DefaultValue>
+  <DefaultValue xsi:nil="true"></DefaultValue>
   <DisplayName>
     <LocalizedNames>
       <LocalizedName description="Default App Id" languagecode="1033" />
