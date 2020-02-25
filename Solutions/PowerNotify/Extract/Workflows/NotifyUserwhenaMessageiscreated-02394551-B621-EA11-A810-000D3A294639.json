@@ -81,7 +81,7 @@
           "actions": {
             "Prepare_each_User_ID_for_query": {
               "runAfter": {
-                "For_each_Party_Member_of_Message": [
+                "Switch": [
                   "Succeeded"
                 ]
               },
@@ -118,46 +118,74 @@
                 },
                 "parameters": {
                   "entityName": "tda_notificationsubscriptions",
-                  "fetchXml": "<fetch distinct=\"false\" mapping=\"logical\" output-format=\"xml-platform\" version=\"1.0\"><entity name=\"tda_notificationsubscription\"><attribute name=\"tda_name\"/><attribute name=\"ownerid\"/><attribute name=\"tda_notificationmethod\"/><filter type=\"and\"><condition value=\"@{triggerOutputs()?['body/_tda_notificationchannel_value']}\" uitype=\"tda_notificationchannel\" operator=\"eq\" attribute=\"tda_notificationchannel\"/>\\n<condition operator=\"in\" attribute=\"ownerid\">@{body('Join_prepared_User_IDs_for_query')}</condition></filter></entity></fetch>"
+                  "fetchXml": "<fetch distinct=\"false\" mapping=\"logical\" output-format=\"xml-platform\" version=\"1.0\"><entity name=\"tda_notificationsubscription\"><attribute name=\"tda_name\"/><attribute name=\"ownerid\"/><attribute name=\"tda_notificationmethod\"/><filter type=\"and\"><condition value=\"@{triggerOutputs()?['body/_tda_notificationchannel_value']}\" uitype=\"tda_notificationchannel\" operator=\"eq\" attribute=\"tda_notificationchannel\"/><condition operator=\"in\" attribute=\"ownerid\">@{body('Join_prepared_User_IDs_for_query')}</condition></filter></entity></fetch>"
                 },
                 "authentication": "@parameters('$authentication')"
               }
             },
-            "Retrieve_Activity_Parties_for_Message": {
+            "Switch": {
               "runAfter": {},
-              "type": "OpenApiConnection",
-              "inputs": {
-                "host": {
-                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                  "connectionName": "shared_commondataserviceforapps",
-                  "operationId": "ListRecords"
+              "cases": {
+                "User": {
+                  "case": "systemusers",
+                  "actions": {
+                    "Add_Owning_User_to_User_IDs_to_Notify": {
+                      "runAfter": {},
+                      "type": "AppendToArrayVariable",
+                      "inputs": {
+                        "name": "User IDs to Notify",
+                        "value": "@triggerOutputs()?['body/_ownerid_value']"
+                      }
+                    }
+                  }
                 },
-                "parameters": {
-                  "entityName": "activityparties",
-                  "$filter": "participationtypemask eq 2 and _activityid_value eq @{triggerOutputs()?['body/activityid']}",
-                  "$expand": "partyid_systemuser($select=systemuserid)"
-                },
-                "authentication": "@parameters('$authentication')"
-              }
-            },
-            "For_each_Party_Member_of_Message": {
-              "foreach": "@outputs('Retrieve_Activity_Parties_for_Message')?['body/value']",
-              "actions": {
-                "Append_User_ID_to_be_Notified": {
-                  "runAfter": {},
-                  "type": "AppendToArrayVariable",
-                  "inputs": {
-                    "name": "User IDs to Notify",
-                    "value": "@items('For_each_Party_Member_of_Message')?['partyid_systemuser']?['systemuserid']"
+                "Team": {
+                  "case": "teams",
+                  "actions": {
+                    "Retrieve_Users_of_Owning_Team": {
+                      "runAfter": {},
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "ListRecords"
+                        },
+                        "parameters": {
+                          "entityName": "systemusers",
+                          "$select": "systemuserid",
+                          "$filter": "teammembership_association/any(o:o/teamid eq @{triggerOutputs()?['body/_ownerid_value']})"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "For_each_User_of_Owning_Team": {
+                      "foreach": "@outputs('Retrieve_Users_of_Owning_Team')?['body/value']",
+                      "actions": {
+                        "Append_User_ID_to_be_Notified": {
+                          "runAfter": {},
+                          "type": "AppendToArrayVariable",
+                          "inputs": {
+                            "name": "User IDs to Notify",
+                            "value": "@items('For_each_User_of_Owning_Team')?['systemuserid']"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Retrieve_Users_of_Owning_Team": [
+                          "Succeeded"
+                        ]
+                      },
+                      "type": "Foreach"
+                    }
                   }
                 }
               },
-              "runAfter": {
-                "Retrieve_Activity_Parties_for_Message": [
-                  "Succeeded"
-                ]
+              "default": {
+                "actions": {}
               },
-              "type": "Foreach"
+              "expression": "@triggerOutputs()?['body/_ownerid_type']",
+              "type": "Switch"
             }
           },
           "runAfter": {

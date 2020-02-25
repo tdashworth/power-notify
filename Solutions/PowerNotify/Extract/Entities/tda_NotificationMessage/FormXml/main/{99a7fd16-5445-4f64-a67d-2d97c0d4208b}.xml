@@ -20,16 +20,11 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{ccb81164-4206-48b5-97ce-176f7cecca54}" showlabel="true" locklevel="0">
+                      <cell id="{23ac3a95-392b-4a57-a660-01193b8b74ae}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="To" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
-                        <control id="to" classid="{CBFB742C-14E7-4A17-96BB-1A13F7F64AA2}" datafieldname="to" disabled="false" uniqueid="{d5a8bed2-b3ce-dc62-134a-08be9ba6443c}">
-                          <parameters>
-                            <AutoResolve>true</AutoResolve>
-                            <DisableMru>false</DisableMru>
-                          </parameters>
-                        </control>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                       </cell>
                     </row>
                     <row>
@@ -156,7 +151,7 @@
         </rows>
       </footer>
       <Navigation>
-        <NavBar></NavBar>
+        <NavBar />
         <NavBarAreas>
           <NavBarArea Id="Info">
             <Titles>
