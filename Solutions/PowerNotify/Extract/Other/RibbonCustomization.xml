@@ -15,7 +15,7 @@
       <EnableRules />
       <DisplayRules />
       <Actions>
-        <JavaScriptFunction FunctionName="NotificationTray.open" Library="$webresource:tda_notification-tray.js">
+        <JavaScriptFunction FunctionName="PowerNotify.NotificationTray.onClick" Library="$webresource:tda_/js/applicationribbon.js">
           <CrmParameter Value="PrimaryControl" />
         </JavaScriptFunction>
       </Actions>

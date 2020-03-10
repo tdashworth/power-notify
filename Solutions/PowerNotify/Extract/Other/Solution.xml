@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.13533" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.14134" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>PowerNotify</UniqueName>
     <LocalizedNames>
@@ -82,7 +82,6 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="1" schemaName="systemuser" behavior="1" />
       <RootComponent type="1" schemaName="tda_notificationchannel" behavior="0" />
       <RootComponent type="1" schemaName="tda_notificationmessage" behavior="0" />
       <RootComponent type="1" schemaName="tda_notificationsubscription" behavior="0" />
@@ -95,12 +94,11 @@
       <RootComponent type="50" schemaName=":RibbonDiffXml" behavior="0" />
       <RootComponent type="60" id="{99a7fd16-5445-4f64-a67d-2d97c0d4208b}" behavior="0" />
       <RootComponent type="60" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" behavior="0" />
-      <RootComponent type="61" schemaName="tda_notification-tray.js" behavior="0" />
+      <RootComponent type="61" schemaName="tda_/js/applicationribbon.js" behavior="0" />
       <RootComponent type="61" schemaName="tda_NotificationBell.svg" behavior="0" />
       <RootComponent type="61" schemaName="tda_service-worker.js" behavior="0" />
-      <RootComponent type="66" schemaName="tda_tda.webpushnotifications.NotificationSubscriptionView" behavior="0" />
       <RootComponent type="300" schemaName="tda_notificationtray_776a0" behavior="0" />
-      <RootComponent type="372" id="{2cc36572-404c-49bb-80c2-63e13ef72d48}" schemaName="tda_5Fweb-20push-20forwarding-20service" behavior="0" />
+      <RootComponent type="372" id="{9946598c-b7d9-41fb-912c-6e61dabcb13d}" schemaName="tda_5Fweb-20push-20forwarding-20service" behavior="0" />
       <RootComponent type="380" schemaName="tda_DefaultAppId" behavior="0" />
       <RootComponent type="380" schemaName="tda_WebPushPublicKey" behavior="0" />
     </RootComponents>
@@ -118,11 +116,11 @@
         <Dependent key="3" type="60" displayName="Information" parentDisplayName="Notification Message" id="{99a7fd16-5445-4f64-a67d-2d97c0d4208b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="5" type="66" schemaName="MscrmControls.AutoComplete.AutoCompleteControl" displayName="MscrmControls.AutoComplete.AutoCompleteControl" solution="CustomControlsCore (9.1.0000.13533)" />
+        <Required key="5" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2002.2014)" />
         <Dependent key="6" type="60" displayName="User" parentDisplayName="User" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required key="7" type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2001.4003)" />
+        <Required key="7" type="66" schemaName="MscrmControls.AutoComplete.AutoCompleteControl" displayName="MscrmControls.AutoComplete.AutoCompleteControl" solution="CustomControlsCore (9.1.0000.14134)" />
         <Dependent key="6" type="60" displayName="User" parentDisplayName="User" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" />
       </MissingDependency>
     </MissingDependencies>

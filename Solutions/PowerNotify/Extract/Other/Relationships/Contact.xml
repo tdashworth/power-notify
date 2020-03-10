@@ -3,7 +3,7 @@
   <EntityRelationship Name="contact_tda_NotificationMessages">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IntroducedVersion>0.1.23.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
     <ReferencingEntityName>tda_NotificationMessage</ReferencingEntityName>
     <ReferencedEntityName>Contact</ReferencedEntityName>

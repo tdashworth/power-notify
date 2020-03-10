@@ -7,7 +7,8 @@
       "ciUrl": "https://orgbf55a6b1.crm4.dynamics.com/",
       "serviceAccountUsername": "admin@crm779385.onmicrosoft.com",
       "prefix": "tda",
-      "solution": "Power Notify"
+      "solution": "Power Notify",
+      "sourceSolution": "PowerNotify"
     }
   }
 }
