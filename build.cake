@@ -188,7 +188,16 @@ void ExtractSolution(string connectionString, string solutionName, DirectoryPath
   XrmExportSolution(connectionString, solutionName, tempDirectory, isManaged: false);
   XrmExportSolution(connectionString, solutionName, tempDirectory, isManaged: true);
   SolutionPackagerExtract(tempDirectory.CombineWithFilePath($"{solutionName}.zip"), outputPath, SolutionPackageType.Both);
+  ExtractMsApps(outputPath + "/CanvasApps");
   PrettyJSONFiles(outputPath);
+}
+
+void ExtractMsApps(DirectoryPath directory) {
+  foreach (var file in GetFiles(directory + $"/**/*.msapp")) {
+    Information("Extracting MS App: " + file);
+    Unzip(file, file.ToString().Replace(".msapp","_msapp"));
+    DeleteFile(file);
+  }
 }
 
 void PrettyJSONFiles(DirectoryPath directory) {
@@ -214,12 +223,25 @@ void PackSolution(string projectFolder, string solutionName, string solutionVers
       String.Join(".", versionParts)
     );
   }
+
+  PackMsApps(projectFolder + "/Extract/CanvasApps");
      
   SolutionPackagerPack(new SolutionPackagerPackSettings(
     Directory(projectFolder).Path.CombineWithFilePath($"bin\\Release\\{solutionName}.zip"),
     Directory(projectFolder).Path.Combine("Extract"),
     SolutionPackageType.Both,
     Directory(projectFolder).Path.CombineWithFilePath("MappingFile.xml")));
+
+  ExtractMsApps(projectFolder + "/Extract/CanvasApps");
+}
+
+void PackMsApps(DirectoryPath searchDirectory) {
+  Information(searchDirectory);
+  foreach (var directory in GetDirectories(searchDirectory + $"/**/*_msapp")) {
+    Information("Packing MS App: " + directory);
+    Zip(directory, directory.ToString().Replace("_msapp",".msapp"));
+    DeleteDirectory(directory, true);
+  }
 }
 
 RunTarget(target);
