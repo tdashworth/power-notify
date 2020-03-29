@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.3\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.3\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
   <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.3\build\Microsoft.NetFramework.Analyzers.props')" />
@@ -42,30 +42,6 @@
     <CodeAnalysisRuleSet>TDAshworth.PowerNotify.Deployment.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Capgemini.DataMigration.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.DataMigration.Engine.2.7.0\lib\net462\Capgemini.DataMigration.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.DataMigration.Resiliency.Polly, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.DataMigration.Engine.2.7.0\lib\net462\Capgemini.DataMigration.Resiliency.Polly.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.Xrm.DataMigration.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.DataMigration.Engine.2.7.0\lib\net462\Capgemini.Xrm.DataMigration.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.Xrm.DataMigration.CrmStore, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.DataMigration.Engine.2.7.0\lib\net462\Capgemini.Xrm.DataMigration.CrmStore.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.Xrm.DataMigration.Engine, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.DataMigration.Engine.2.7.0\lib\net462\Capgemini.Xrm.DataMigration.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.Xrm.DataMigration.FileStore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.DataMigration.Engine.2.7.0\lib\net462\Capgemini.Xrm.DataMigration.FileStore.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.Xrm.Deployment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.Deployment.2.1.0\lib\net462\Capgemini.Xrm.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="Capgemini.Xrm.Deployment.PackageDeployer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Capgemini.Xrm.Deployment.PackageDeployer.2.1.1\lib\net462\Capgemini.Xrm.Deployment.PackageDeployer.dll</HintPath>
-    </Reference>
     <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
     </Reference>
@@ -185,30 +161,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PkgFolder\Content\en-us\EndHtml\CSS\common.css" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\HTML\Default.htm" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\body_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\contentarea_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\contentArea_back_home.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\content_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\content_back_orig.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\footer_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\header_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\nav_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\nav_list_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\top_item_selected_bg.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\CSS\common.css" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\HTML\Default.htm" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\body_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\contentarea_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\contentArea_back_home.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\content_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\content_back_orig.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\footer_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\header_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\nav_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\nav_list_back.gif" />
-    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\top_item_selected_bg.gif" />
     <Content Include="PkgFolder\ImportConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
