@@ -11,6 +11,16 @@ namespace PowerNotify.NotificationTray {
     );
   }
 
+  export function setBadge() {
+    async function setBadgeAsync() {
+      const countOfMessages = await getMyMessagesCount()
+      const styling = createBadgeStyling(countOfMessages > 100 ? 99 : countOfMessages)
+      parent.document.getElementsByTagName('head')[0].appendChild(styling);
+    }
+
+    setBadgeAsync();
+  }
+
   async function openNotificationTray() {
     try {
       const appId = await getNotificationTrayAppId();
@@ -209,6 +219,49 @@ namespace PowerNotify.NotificationTray {
     const os = find(oss, ({ regex }) => regex.test(userAgent)).name;
 
     return `${browser} (${os})`;
+  }
+
+  function createBadgeStyling(content) {
+    const styling = document.createElement('style');
+    styling.type = 'text/css';
+    styling.id = 'tda_PowerNotify.ApplicationRibbon'
+    styling.innerHTML = `
+    button[data-id="tda.ApplicationRibbon.NotificationTray.Button"] {
+      position: relative;
+    }
+
+    button[data-id="tda.ApplicationRibbon.NotificationTray.Button"] > span::after {
+      content: '${content}';
+      position: absolute;
+      box-sizing: border-box;
+      height: 1.5rem;
+      min-width: 1.5rem;
+      line-height: 1.5rem;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 100rem;
+      text-align: center;
+      font-size: x-small;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+    }
+    `;
+    return styling;
+  }
+
+  async function getMyMessagesCount() {
+    const { userId } = Xrm.Utility.getGlobalContext().userSettings;
+    const result = await Xrm.WebApi.online
+      .retrieveMultipleRecords(
+        "tda_notificationmessage",
+        `?$count=true&$filter=_ownerid_value eq ${userId}`
+      )
+      .then(result => result.entities.length)
+
+    return result
   }
 
   function find<T>(arr: T[], predicate: (T, int?) => boolean): T {

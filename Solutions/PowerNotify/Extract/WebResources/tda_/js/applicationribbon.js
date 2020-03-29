@@ -55,6 +55,25 @@ var PowerNotify;
                 2 /* Desktop */);
         }
         NotificationTray.isDesktop = isDesktop;
+        function setBadge() {
+            function setBadgeAsync() {
+                return __awaiter(this, void 0, void 0, function () {
+                    var countOfMessages, styling;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, getMyMessagesCount()];
+                            case 1:
+                                countOfMessages = _a.sent();
+                                styling = createBadgeStyling(countOfMessages > 100 ? 99 : countOfMessages);
+                                parent.document.getElementsByTagName('head')[0].appendChild(styling);
+                                return [2 /*return*/];
+                        }
+                    });
+                });
+            }
+            setBadgeAsync();
+        }
+        NotificationTray.setBadge = setBadge;
         function openNotificationTray() {
             return __awaiter(this, void 0, void 0, function () {
                 var appId, url, error_1;
@@ -304,6 +323,30 @@ var PowerNotify;
                 return regex.test(userAgent);
             }).name;
             return browser + " (" + os + ")";
+        }
+        function createBadgeStyling(content) {
+            var styling = document.createElement('style');
+            styling.type = 'text/css';
+            styling.id = 'tda_PowerNotify.ApplicationRibbon';
+            styling.innerHTML = "\n    button[data-id=\"tda.ApplicationRibbon.NotificationTray.Button\"] {\n      position: relative;\n    }\n\n    button[data-id=\"tda.ApplicationRibbon.NotificationTray.Button\"] > span::after {\n      content: '" + content + "';\n      position: absolute;\n      box-sizing: border-box;\n      height: 1.5rem;\n      min-width: 1.5rem;\n      line-height: 1.5rem;\n      padding-left: 0.3rem;\n      padding-right: 0.3rem;\n      right: 5px;\n      bottom: 5px;\n      border-radius: 100rem;\n      text-align: center;\n      font-size: x-small;\n      font-weight: bold;\n      color: white;\n      background-color: red;\n    }\n    ";
+            return styling;
+        }
+        function getMyMessagesCount() {
+            return __awaiter(this, void 0, void 0, function () {
+                var userId, result;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            userId = Xrm.Utility.getGlobalContext().userSettings.userId;
+                            return [4 /*yield*/, Xrm.WebApi.online
+                                    .retrieveMultipleRecords("tda_notificationmessage", "?$count=true&$filter=_ownerid_value eq " + userId)
+                                    .then(function (result) { return result.entities.length; })];
+                        case 1:
+                            result = _a.sent();
+                            return [2 /*return*/, result];
+                    }
+                });
+            });
         }
         function find(arr, predicate) {
             for (var i = 0, l = arr.length; i < l; i += 1) {
