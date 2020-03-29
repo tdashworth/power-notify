@@ -59,140 +59,16 @@
               "subscriptionRequest/scope": 4
             },
             "authentication": "@parameters('$authentication')"
-          }
+          },
+          "conditions": [
+            {
+              "expression": "@equals(triggerBody()?['_ownerid_type'], 'systemusers')"
+            }
+          ],
+          "description": "Tigger conditions have been applied."
         }
       },
       "actions": {
-        "Initialize_\"User_IDs_to_Notify\"": {
-          "runAfter": {},
-          "type": "InitializeVariable",
-          "inputs": {
-            "variables": [
-              {
-                "name": "User IDs to Notify",
-                "type": "Array"
-              }
-            ]
-          }
-        },
-        "Get_User's_Channel_Subscriptions": {
-          "actions": {
-            "Prepare_each_User_ID_for_query": {
-              "runAfter": {
-                "Switch": [
-                  "Succeeded"
-                ]
-              },
-              "type": "Select",
-              "inputs": {
-                "from": "@variables('User IDs to Notify')",
-                "select": "@concat('<value uitype=\"systemuser\">',item(),'</value>')"
-              }
-            },
-            "Join_prepared_User_IDs_for_query": {
-              "runAfter": {
-                "Prepare_each_User_ID_for_query": [
-                  "Succeeded"
-                ]
-              },
-              "type": "Join",
-              "inputs": {
-                "from": "@body('Prepare_each_User_ID_for_query')",
-                "joinWith": "@{''}"
-              }
-            },
-            "Retrieve_Channel_Subscriptions": {
-              "runAfter": {
-                "Join_prepared_User_IDs_for_query": [
-                  "Succeeded"
-                ]
-              },
-              "type": "OpenApiConnection",
-              "inputs": {
-                "host": {
-                  "connectionName": "shared_commondataserviceforapps",
-                  "operationId": "ListRecords",
-                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                },
-                "parameters": {
-                  "entityName": "tda_notificationsubscriptions",
-                  "fetchXml": "<fetch distinct=\"false\" mapping=\"logical\" output-format=\"xml-platform\" version=\"1.0\"><entity name=\"tda_notificationsubscription\"><attribute name=\"tda_name\"/><attribute name=\"ownerid\"/><attribute name=\"tda_notificationmethod\"/><filter type=\"and\"><condition value=\"@{triggerOutputs()?['body/_tda_notificationchannel_value']}\" uitype=\"tda_notificationchannel\" operator=\"eq\" attribute=\"tda_notificationchannel\"/><condition operator=\"in\" attribute=\"ownerid\">@{body('Join_prepared_User_IDs_for_query')}</condition></filter></entity></fetch>"
-                },
-                "authentication": "@parameters('$authentication')"
-              }
-            },
-            "Switch": {
-              "runAfter": {},
-              "cases": {
-                "User": {
-                  "case": "systemusers",
-                  "actions": {
-                    "Add_Owning_User_to_User_IDs_to_Notify": {
-                      "runAfter": {},
-                      "type": "AppendToArrayVariable",
-                      "inputs": {
-                        "name": "User IDs to Notify",
-                        "value": "@triggerOutputs()?['body/_ownerid_value']"
-                      }
-                    }
-                  }
-                },
-                "Team": {
-                  "case": "teams",
-                  "actions": {
-                    "Retrieve_Users_of_Owning_Team": {
-                      "runAfter": {},
-                      "type": "OpenApiConnection",
-                      "inputs": {
-                        "host": {
-                          "connectionName": "shared_commondataserviceforapps",
-                          "operationId": "ListRecords",
-                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                        },
-                        "parameters": {
-                          "entityName": "systemusers",
-                          "$select": "systemuserid",
-                          "$filter": "teammembership_association/any(o:o/teamid eq @{triggerOutputs()?['body/_ownerid_value']})"
-                        },
-                        "authentication": "@parameters('$authentication')"
-                      }
-                    },
-                    "For_each_User_of_Owning_Team": {
-                      "foreach": "@outputs('Retrieve_Users_of_Owning_Team')?['body/value']",
-                      "actions": {
-                        "Append_User_ID_to_be_Notified": {
-                          "runAfter": {},
-                          "type": "AppendToArrayVariable",
-                          "inputs": {
-                            "name": "User IDs to Notify",
-                            "value": "@items('For_each_User_of_Owning_Team')?['systemuserid']"
-                          }
-                        }
-                      },
-                      "runAfter": {
-                        "Retrieve_Users_of_Owning_Team": [
-                          "Succeeded"
-                        ]
-                      },
-                      "type": "Foreach"
-                    }
-                  }
-                }
-              },
-              "default": {
-                "actions": {}
-              },
-              "expression": "@triggerOutputs()?['body/_ownerid_type']",
-              "type": "Switch"
-            }
-          },
-          "runAfter": {
-            "Initialize_\"Leave_in_Tray\"": [
-              "Succeeded"
-            ]
-          },
-          "type": "Scope"
-        },
         "For_each_Channel_Subscription_to_Notify": {
           "foreach": "@outputs('Retrieve_Channel_Subscriptions')?['body/value']",
           "actions": {
@@ -372,12 +248,23 @@
             },
             "User_opted_for_Notification_Tray": {
               "actions": {
-                "Set_\"Leave_in_Tray\"": {
+                "Update_Message": {
                   "runAfter": {},
-                  "type": "SetVariable",
+                  "type": "OpenApiConnection",
                   "inputs": {
-                    "name": "Leave in tray",
-                    "value": "@true"
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "tda_notificationmessages",
+                      "recordId": "@triggerOutputs()?['body/activityid']",
+                      "item/statecode": 1,
+                      "item/tda_onclickurl": "@variables('Regarding Record URL')",
+                      "item/statuscode": 2
+                    },
+                    "authentication": "@parameters('$authentication')"
                   }
                 }
               },
@@ -396,18 +283,14 @@
             }
           },
           "runAfter": {
-            "Get_Regarding_Record_URL": [
+            "Retrieve_Channel_Subscriptions": [
               "Succeeded"
             ]
           },
           "type": "Foreach"
         },
         "Initialize_\"Regarding_Record_URL\"": {
-          "runAfter": {
-            "Initialize_\"User_IDs_to_Notify\"": [
-              "Succeeded"
-            ]
-          },
+          "runAfter": {},
           "type": "InitializeVariable",
           "inputs": {
             "variables": [
@@ -477,83 +360,31 @@
             }
           },
           "runAfter": {
-            "Get_User's_Channel_Subscriptions": [
+            "Initialize_\"Regarding_Record_URL\"": [
               "Succeeded"
             ]
           },
           "type": "Scope"
         },
-        "Initialize_\"Leave_in_Tray\"": {
+        "Retrieve_Channel_Subscriptions": {
           "runAfter": {
-            "Initialize_\"Regarding_Record_URL\"": [
+            "Get_Regarding_Record_URL": [
               "Succeeded"
             ]
           },
-          "type": "InitializeVariable",
+          "type": "OpenApiConnection",
           "inputs": {
-            "variables": [
-              {
-                "name": "Leave in Tray",
-                "type": "boolean",
-                "value": "@false"
-              }
-            ]
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "tda_notificationsubscriptions",
+              "$filter": "_owninguser_value eq @{triggerOutputs()?['body/_ownerid_value']} and _tda_notificationchannel_value eq @{triggerOutputs()?['body/_tda_notificationchannel_value']}"
+            },
+            "authentication": "@parameters('$authentication')"
           }
-        },
-        "Update_or_Delete_Message": {
-          "actions": {
-            "Update_Message": {
-              "runAfter": {},
-              "type": "OpenApiConnection",
-              "inputs": {
-                "host": {
-                  "connectionName": "shared_commondataserviceforapps",
-                  "operationId": "UpdateRecord",
-                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                },
-                "parameters": {
-                  "entityName": "tda_notificationmessages",
-                  "recordId": "@triggerOutputs()?['body/activityid']",
-                  "item/statecode": 1,
-                  "item/tda_onclickurl": "@variables('Regarding Record URL')",
-                  "item/statuscode": 2
-                },
-                "authentication": "@parameters('$authentication')"
-              }
-            }
-          },
-          "runAfter": {
-            "For_each_Channel_Subscription_to_Notify": [
-              "Succeeded"
-            ]
-          },
-          "else": {
-            "actions": {
-              "Delete_Message": {
-                "runAfter": {},
-                "type": "OpenApiConnection",
-                "inputs": {
-                  "host": {
-                    "connectionName": "shared_commondataserviceforapps",
-                    "operationId": "DeleteRecord",
-                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                  },
-                  "parameters": {
-                    "entityName": "tda_notificationmessages",
-                    "recordId": "@triggerOutputs()?['body/activityid']"
-                  },
-                  "authentication": "@parameters('$authentication')"
-                }
-              }
-            }
-          },
-          "expression": {
-            "equals": [
-              "@variables('Leave in Tray')",
-              "@true"
-            ]
-          },
-          "type": "If"
         }
       },
       "outputs": {}

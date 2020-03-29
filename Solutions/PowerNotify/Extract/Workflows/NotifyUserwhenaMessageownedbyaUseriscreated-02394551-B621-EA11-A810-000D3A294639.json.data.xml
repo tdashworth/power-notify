@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Workflow WorkflowId="{02394551-b621-ea11-a810-000d3a294639}" Name="Notify User when a Message is created" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <JsonFileName>/Workflows/NotifyUserwhenaMessageiscreated-02394551-B621-EA11-A810-000D3A294639.json</JsonFileName>
+<Workflow WorkflowId="{02394551-b621-ea11-a810-000d3a294639}" Name="Notify User when a Message owned by a User is created" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/NotifyUserwhenaMessageownedbyaUseriscreated-02394551-B621-EA11-A810-000D3A294639.json</JsonFileName>
   <Type>1</Type>
   <Subprocess>0</Subprocess>
   <Category>5</Category>
@@ -19,6 +19,6 @@
   <IsCustomizable>1</IsCustomizable>
   <PrimaryEntity>none</PrimaryEntity>
   <LocalizedNames>
-    <LocalizedName languagecode="1033" description="Notify User when a Message is created" />
+    <LocalizedName languagecode="1033" description="Notify User when a Message owned by a User is created" />
   </LocalizedNames>
 </Workflow>

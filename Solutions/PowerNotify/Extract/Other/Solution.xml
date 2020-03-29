@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="This is an all-in-one solution for notifying your PowerApps users giving them the control they deserve in a distraction filled world. " languagecode="1033" />
     </Descriptions>
-    <Version>0.1.27.0</Version>
+    <Version>0.1.28.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>tdashworth</UniqueName>
@@ -91,6 +91,8 @@
       <RootComponent type="20" id="{696ef5ae-710b-ea11-a811-000d3a86b423}" behavior="0" />
       <RootComponent type="20" id="{95e7421e-710b-ea11-a811-000d3a86b423}" behavior="0" />
       <RootComponent type="29" id="{02394551-b621-ea11-a810-000d3a294639}" behavior="0" />
+      <RootComponent type="29" id="{4b2eae39-bb71-ea11-a812-000d3aba364d}" behavior="0" />
+      <RootComponent type="29" id="{60587bb6-b5d0-4d78-b4a6-a2b20015d28e}" behavior="0" />
       <RootComponent type="50" schemaName=":RibbonDiffXml" behavior="0" />
       <RootComponent type="60" id="{99a7fd16-5445-4f64-a67d-2d97c0d4208b}" behavior="0" />
       <RootComponent type="60" id="{c2cd9e55-d4b4-4b55-9951-16ead79643e5}" behavior="0" />
@@ -105,7 +107,7 @@
     <MissingDependencies>
       <MissingDependency>
         <Required key="0" type="1" schemaName="environmentvariabledefinition" displayName="Environment Variable Definition" solution="EnvironmentVariables (1.0.2.7)" />
-        <Dependent key="1" type="29" displayName="Notify User when a Message is created" id="{02394551-b621-ea11-a810-000d3a294639}" />
+        <Dependent key="1" type="29" displayName="Notify User when a Message owned by a User is created" id="{02394551-b621-ea11-a810-000d3a294639}" />
       </MissingDependency>
       <MissingDependency>
         <Required key="2" type="60" displayName="account card" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{b028db32-3619-48a5-ac51-cf3f947b0ef3}" />
