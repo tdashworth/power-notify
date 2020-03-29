@@ -4,8 +4,8 @@
     "Name": "Header",
     "Template": {
       "Id": "http://microsoft.com/appmagic/Component",
-      "Version": "637194362533305501",
-      "LastModifiedTimestamp": "637194330681280965",
+      "Version": "637206499544558131",
+      "LastModifiedTimestamp": "637206501374985025",
       "Name": "ae52301f66e64389920573c4f45c5c0e",
       "FirstParty": true,
       "IsCustomGroupControlTemplate": false,
@@ -24,7 +24,7 @@
       ],
       "OverridableProperties": {}
     },
-    "Index": 5.0,
+    "Index": 6.0,
     "PublishOrderIndex": 0,
     "VariantName": "",
     "LayoutName": "",
@@ -115,7 +115,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 39,
+        "PublishOrderIndex": 46,
         "VariantName": "",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -410,7 +410,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 40,
+        "PublishOrderIndex": 47,
         "VariantName": "Cancel",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -660,7 +660,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 41,
+        "PublishOrderIndex": 48,
         "VariantName": "Cancel",
         "LayoutName": "",
         "MetaDataIDKey": "",

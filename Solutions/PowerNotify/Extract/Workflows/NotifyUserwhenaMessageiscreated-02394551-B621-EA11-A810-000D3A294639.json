@@ -187,7 +187,7 @@
             }
           },
           "runAfter": {
-            "Initialize_\"Regarding_Record_URL\"": [
+            "Initialize_\"Leave_in_Tray\"": [
               "Succeeded"
             ]
           },
@@ -312,7 +312,13 @@
                         "@outputs('Retrieve_Owing_User_of_Subscription')?['body/domainname']"
                       ],
                       "payload/message": "@{triggerOutputs()?['body/subject']}@{if(empty(triggerOutputs()?['body/description']), '', concat(' - ', triggerOutputs()?['body/description']))}",
-                      "payload/openApp": true
+                      "payload/openApp": true,
+                      "payload/params": {
+                        "subject": "@encodeUriComponent(encodeUriComponent(triggerOutputs()?['body/subject']))",
+                        "description": "@encodeUriComponent(encodeUriComponent(triggerOutputs()?['body/description']))",
+                        "regardingurl": "@encodeUriComponent(encodeUriComponent(variables('Regarding Record URL')))",
+                        "id": "@if(contains(items('For_each_Channel_Subscription_to_Notify')?['tda_notificationmethod'], string('751410002')), encodeUriComponent(encodeUriComponent(triggerOutputs()?['body/activityid'])), '')"
+                      }
                     },
                     "authentication": "@parameters('$authentication')"
                   }
@@ -366,23 +372,12 @@
             },
             "User_opted_for_Notification_Tray": {
               "actions": {
-                "Update_Message": {
+                "Set_\"Leave_in_Tray\"": {
                   "runAfter": {},
-                  "type": "OpenApiConnection",
+                  "type": "SetVariable",
                   "inputs": {
-                    "host": {
-                      "connectionName": "shared_commondataserviceforapps",
-                      "operationId": "UpdateRecord",
-                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                    },
-                    "parameters": {
-                      "entityName": "tda_notificationmessages",
-                      "recordId": "@triggerOutputs()?['body/activityid']",
-                      "item/statecode": 1,
-                      "item/tda_onclickurl": "@variables('Regarding Record URL')",
-                      "item/statuscode": 2
-                    },
-                    "authentication": "@parameters('$authentication')"
+                    "name": "Leave in tray",
+                    "value": "@true"
                   }
                 }
               },
@@ -390,26 +385,6 @@
                 "User_opted_for_Email": [
                   "Succeeded"
                 ]
-              },
-              "else": {
-                "actions": {
-                  "Delete_Message": {
-                    "runAfter": {},
-                    "type": "OpenApiConnection",
-                    "inputs": {
-                      "host": {
-                        "connectionName": "shared_commondataserviceforapps",
-                        "operationId": "DeleteRecord",
-                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-                      },
-                      "parameters": {
-                        "entityName": "tda_notificationmessages",
-                        "recordId": "@triggerOutputs()?['body/activityid']"
-                      },
-                      "authentication": "@parameters('$authentication')"
-                    }
-                  }
-                }
               },
               "expression": {
                 "contains": [
@@ -507,6 +482,78 @@
             ]
           },
           "type": "Scope"
+        },
+        "Initialize_\"Leave_in_Tray\"": {
+          "runAfter": {
+            "Initialize_\"Regarding_Record_URL\"": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Leave in Tray",
+                "type": "boolean",
+                "value": "@false"
+              }
+            ]
+          }
+        },
+        "Update_or_Delete_Message": {
+          "actions": {
+            "Update_Message": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "tda_notificationmessages",
+                  "recordId": "@triggerOutputs()?['body/activityid']",
+                  "item/statecode": 1,
+                  "item/tda_onclickurl": "@variables('Regarding Record URL')",
+                  "item/statuscode": 2
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "For_each_Channel_Subscription_to_Notify": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Delete_Message": {
+                "runAfter": {},
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "DeleteRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "tda_notificationmessages",
+                    "recordId": "@triggerOutputs()?['body/activityid']"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@variables('Leave in Tray')",
+              "@true"
+            ]
+          },
+          "type": "If"
         }
       },
       "outputs": {}
