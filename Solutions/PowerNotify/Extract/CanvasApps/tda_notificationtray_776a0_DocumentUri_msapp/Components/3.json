@@ -4,8 +4,8 @@
     "Name": "Header",
     "Template": {
       "Id": "http://microsoft.com/appmagic/Component",
-      "Version": "637206499544558131",
-      "LastModifiedTimestamp": "637206501374985025",
+      "Version": "637211158394919540",
+      "LastModifiedTimestamp": "637211157090842099",
       "Name": "ae52301f66e64389920573c4f45c5c0e",
       "FirstParty": true,
       "IsCustomGroupControlTemplate": false,
