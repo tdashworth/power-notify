@@ -92,8 +92,8 @@
         "Name": "Device Reg Header",
         "Template": {
           "Id": "http://microsoft.com/appmagic/Component",
-          "Version": "637211158394919540",
-          "LastModifiedTimestamp": "637211157090842099",
+          "Version": "637211722725729360",
+          "LastModifiedTimestamp": "637211721403846747",
           "Name": "ae52301f66e64389920573c4f45c5c0e",
           "FirstParty": true,
           "IsCustomGroupControlTemplate": false,
@@ -112,7 +112,7 @@
           ],
           "ComponentDefinitionInfo": {
             "Name": "Header",
-            "LastModifiedTimestamp": "637211157090842099",
+            "LastModifiedTimestamp": "637211721403846747",
             "Rules": [
               {
                 "Property": "title",
@@ -189,7 +189,7 @@
                   "OverridableProperties": {}
                 },
                 "Index": 0.0,
-                "PublishOrderIndex": 46,
+                "PublishOrderIndex": 50,
                 "VariantName": "",
                 "LayoutName": "",
                 "MetaDataIDKey": "",
@@ -484,7 +484,7 @@
                   "OverridableProperties": {}
                 },
                 "Index": 0.0,
-                "PublishOrderIndex": 47,
+                "PublishOrderIndex": 51,
                 "VariantName": "Cancel",
                 "LayoutName": "",
                 "MetaDataIDKey": "",
@@ -734,7 +734,7 @@
                   "OverridableProperties": {}
                 },
                 "Index": 0.0,
-                "PublishOrderIndex": 48,
+                "PublishOrderIndex": 52,
                 "VariantName": "Cancel",
                 "LayoutName": "",
                 "MetaDataIDKey": "",
@@ -967,7 +967,7 @@
           "OverridableProperties": {}
         },
         "Index": 2.0,
-        "PublishOrderIndex": 27,
+        "PublishOrderIndex": 31,
         "VariantName": "",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -1068,7 +1068,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 28,
+        "PublishOrderIndex": 32,
         "VariantName": "BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -1530,7 +1530,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 29,
+            "PublishOrderIndex": 33,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "",
@@ -1570,7 +1570,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 30,
+            "PublishOrderIndex": 34,
             "VariantName": "ChevronRight",
             "LayoutName": "",
             "MetaDataIDKey": "%TemplateBrowseGalleryNextIcon.ID%",
@@ -1839,7 +1839,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 31,
+            "PublishOrderIndex": 35,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "",
@@ -2140,7 +2140,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 32,
+            "PublishOrderIndex": 36,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "",
@@ -2456,7 +2456,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 33,
+            "PublishOrderIndex": 37,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "%TemplateBrowseGallerySeparator1.ID%",

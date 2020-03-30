@@ -4,7 +4,7 @@
   "Id": "f4662229-384f-4ab0-9c8d-84b1d1d005be",
   "FileID": "f4662229-384f-4ab0-9c8d-84b1d1d005be",
   "LocalConnectionReferences": "{}",
-  "LocalDatabaseReferences": "{\"default.cds\":{\"state\":\"Configured\",\"instanceUrl\":\"https://crm300132.crm4.dynamics.com/\",\"webApiVersion\":\"v9.0\",\"dataSources\":{\"Notification Messages\":{\"entitySetName\":\"tda_notificationmessages\",\"logicalName\":\"tda_notificationmessage\"},\"Notification Subscriptions\":{\"entitySetName\":\"tda_notificationsubscriptions\",\"logicalName\":\"tda_notificationsubscription\"},\"Web Push Subscriptions\":{\"entitySetName\":\"tda_webpushsubscriptions\",\"logicalName\":\"tda_webpushsubscription\"},\"Notification Channels\":{\"entitySetName\":\"tda_notificationchannels\",\"logicalName\":\"tda_notificationchannel\"},\"Users\":{\"entitySetName\":\"systemusers\",\"logicalName\":\"systemuser\"}}}}",
+  "LocalDatabaseReferences": "{\"default.cds\":{\"state\":\"Configured\",\"instanceUrl\":\"https://crm300132.crm4.dynamics.com/\",\"webApiVersion\":\"v9.0\",\"dataSources\":{\"Notification Messages\":{\"entitySetName\":\"tda_notificationmessages\",\"logicalName\":\"tda_notificationmessage\"},\"Notification Subscriptions\":{\"entitySetName\":\"tda_notificationsubscriptions\",\"logicalName\":\"tda_notificationsubscription\"},\"Web Push Subscriptions\":{\"entitySetName\":\"tda_webpushsubscriptions\",\"logicalName\":\"tda_webpushsubscription\"},\"Notification Channels\":{\"entitySetName\":\"tda_notificationchannels\",\"logicalName\":\"tda_notificationchannel\"},\"Users\":{\"entitySetName\":\"systemusers\",\"logicalName\":\"systemuser\"},\"Model-driven Apps\":{\"entitySetName\":\"appmodules\",\"logicalName\":\"appmodule\"}}}}",
   "LibraryDependencies": "[]",
   "AppPreviewFlagsKey": [
     "delayloadscreens",
@@ -37,7 +37,7 @@
   "DocumentType": "App",
   "AppCreationSource": "AppFromScratch",
   "AppDescription": "",
-  "LastControlUniqueId": 58,
+  "LastControlUniqueId": 62,
   "DefaultConnectedDataSourceMaxGetRowsCount": 500,
   "ContainsThirdPartyPcfControls": false,
   "ErrorCount": 1,
@@ -45,7 +45,7 @@
   "EnableInstrumentation": false,
   "ControlCount": {
     "ae52301f66e64389920573c4f45c5c0e": 7,
-    "label": 8,
+    "label": 10,
     "icon": 6,
     "screen": 6,
     "listbox": 2,
@@ -57,8 +57,9 @@
     "rectangle": 3,
     "text": 2,
     "combobox": 1,
+    "dropdown": 1,
     "htmlViewer": 1
   },
-  "DeserializationLoadTime": 2.3938612,
-  "AnalysisLoadTime": 0.1687842
+  "DeserializationLoadTime": 2.8740780999999997,
+  "AnalysisLoadTime": 0.291083
 }

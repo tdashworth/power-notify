@@ -92,8 +92,8 @@
         "Name": "Channel Sub Header",
         "Template": {
           "Id": "http://microsoft.com/appmagic/Component",
-          "Version": "637211158394919540",
-          "LastModifiedTimestamp": "637211157090842099",
+          "Version": "637211722725729360",
+          "LastModifiedTimestamp": "637211721403846747",
           "Name": "ae52301f66e64389920573c4f45c5c0e",
           "FirstParty": true,
           "IsCustomGroupControlTemplate": false,
@@ -112,7 +112,7 @@
           ],
           "ComponentDefinitionInfo": {
             "Name": "Header",
-            "LastModifiedTimestamp": "637211157090842099",
+            "LastModifiedTimestamp": "637211721403846747",
             "Rules": [
               {
                 "Property": "title",
@@ -189,7 +189,7 @@
                   "OverridableProperties": {}
                 },
                 "Index": 0.0,
-                "PublishOrderIndex": 46,
+                "PublishOrderIndex": 50,
                 "VariantName": "",
                 "LayoutName": "",
                 "MetaDataIDKey": "",
@@ -484,7 +484,7 @@
                   "OverridableProperties": {}
                 },
                 "Index": 0.0,
-                "PublishOrderIndex": 47,
+                "PublishOrderIndex": 51,
                 "VariantName": "Cancel",
                 "LayoutName": "",
                 "MetaDataIDKey": "",
@@ -734,7 +734,7 @@
                   "OverridableProperties": {}
                 },
                 "Index": 0.0,
-                "PublishOrderIndex": 48,
+                "PublishOrderIndex": 52,
                 "VariantName": "Cancel",
                 "LayoutName": "",
                 "MetaDataIDKey": "",
@@ -967,7 +967,7 @@
           "OverridableProperties": {}
         },
         "Index": 2.0,
-        "PublishOrderIndex": 17,
+        "PublishOrderIndex": 21,
         "VariantName": "",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -1068,7 +1068,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 18,
+        "PublishOrderIndex": 22,
         "VariantName": "",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -1363,7 +1363,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 19,
+        "PublishOrderIndex": 23,
         "VariantName": "BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -1378,7 +1378,7 @@
           {
             "Property": "Items",
             "Category": "Data",
-            "InvariantScript": "Filter('Notification Subscriptions', 'Owning User'.'Primary Email' = UserEmail, 'Search Input'.Text in 'Notification Channel'.Name)"
+            "InvariantScript": "Filter('Notification Subscriptions', 'Owning User'.'Primary Email' = UserEmail, 'Search Input'.Text in 'Notification Channel'.tda_name)"
           },
           {
             "Property": "WrapCount",
@@ -1847,7 +1847,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 20,
+            "PublishOrderIndex": 24,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "",
@@ -1887,7 +1887,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 21,
+            "PublishOrderIndex": 25,
             "VariantName": "ChevronRight",
             "LayoutName": "",
             "MetaDataIDKey": "%TemplateBrowseGalleryNextIcon.ID%",
@@ -2156,7 +2156,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 22,
+            "PublishOrderIndex": 26,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "%TemplateBrowseGalleryTitle.ID%",
@@ -2176,7 +2176,7 @@
               {
                 "Property": "Text",
                 "Category": "Data",
-                "InvariantScript": "ThisItem.'Notification Channel'.Name"
+                "InvariantScript": "ThisItem.'Notification Channel'.tda_name"
               },
               {
                 "Property": "Role",
@@ -2408,7 +2408,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 23,
+            "PublishOrderIndex": 27,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "",
@@ -2726,7 +2726,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 24,
+            "PublishOrderIndex": 28,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "%TemplateBrowseGallerySeparator1.ID%",
@@ -2852,7 +2852,7 @@
           "OverridableProperties": {}
         },
         "Index": 0.0,
-        "PublishOrderIndex": 25,
+        "PublishOrderIndex": 29,
         "VariantName": "",
         "LayoutName": "",
         "MetaDataIDKey": "",
@@ -2946,7 +2946,7 @@
               "OverridableProperties": {}
             },
             "Index": 0.0,
-            "PublishOrderIndex": 26,
+            "PublishOrderIndex": 30,
             "VariantName": "",
             "LayoutName": "",
             "MetaDataIDKey": "",

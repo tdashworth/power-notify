@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>tda_notificationtray_776a0</Name>
-  <AppVersion>2020-03-29T22:03:09Z</AppVersion>
+  <AppVersion>2020-03-30T13:37:59Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.20023.4.0</CreatedByClientVersion>
   <MinClientVersion>3.20023.4.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"c8d8020d-4d50-4fef-b14c-061f4751385e","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.20023.4","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true"}</Tags>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"1f4dfb4c-3e5a-435f-9893-e3f8c93b4d06","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.20023.4","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
@@ -15,12 +15,12 @@
   <Publisher xsi:nil="true"></Publisher>
   <AuthorizationReferences xsi:nil="true"></AuthorizationReferences>
   <ConnectionReferences>{}</ConnectionReferences>
-  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds"},"dataSources":{"Notification Messages":{"entitySetName":"tda_notificationmessages","logicalName":"tda_notificationmessage"},"Notification Subscriptions":{"entitySetName":"tda_notificationsubscriptions","logicalName":"tda_notificationsubscription"},"Web Push Subscriptions":{"entitySetName":"tda_webpushsubscriptions","logicalName":"tda_webpushsubscription"},"Notification Channels":{"entitySetName":"tda_notificationchannels","logicalName":"tda_notificationchannel"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"}}}}</DatabaseReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds"},"dataSources":{"Notification Messages":{"entitySetName":"tda_notificationmessages","logicalName":"tda_notificationmessage"},"Notification Subscriptions":{"entitySetName":"tda_notificationsubscriptions","logicalName":"tda_notificationsubscription"},"Web Push Subscriptions":{"entitySetName":"tda_webpushsubscriptions","logicalName":"tda_webpushsubscription"},"Notification Channels":{"entitySetName":"tda_notificationchannels","logicalName":"tda_notificationchannel"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"},"Model-driven Apps":{"entitySetName":"appmodules","logicalName":"appmodule"}}}}</DatabaseReferences>
   <BypassConsent>0</BypassConsent>
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
   <EmbeddedApp xsi:nil="true"></EmbeddedApp>
   <IntroducedVersion>1.0</IntroducedVersion>
-  <CdsDependencies>{"cdsdependencies":[{"logicalname":"tda_notificationmessage","componenttype":1},{"logicalname":"tda_notificationsubscription","componenttype":1},{"logicalname":"tda_webpushsubscription","componenttype":1},{"logicalname":"tda_notificationchannel","componenttype":1},{"logicalname":"systemuser","componenttype":1}]}</CdsDependencies>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"tda_notificationmessage","componenttype":1},{"logicalname":"tda_notificationsubscription","componenttype":1},{"logicalname":"tda_webpushsubscription","componenttype":1},{"logicalname":"tda_notificationchannel","componenttype":1},{"logicalname":"systemuser","componenttype":1},{"logicalname":"appmodule","componenttype":1}]}</CdsDependencies>
   <BackgroundImageUri>/CanvasApps/tda_notificationtray_776a0_BackgroundImageUri</BackgroundImageUri>
   <DocumentUri>/CanvasApps/tda_notificationtray_776a0_DocumentUri.msapp</DocumentUri>
 </CanvasApp>

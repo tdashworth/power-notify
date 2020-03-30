@@ -35,7 +35,7 @@
       {
         "Property": "OnStart",
         "Category": "Behavior",
-        "InvariantScript": "Set(UserEmail,User().Email);\r\nNavigate(If(Not(IsBlank(Param(\"subject\"))), 'New Notification Screen', 'Tray Screen'));"
+        "InvariantScript": "Set(UserEmail,User().Email);\r\nSet(LocalUser, LookUp(Users, 'Primary Email' = UserEmail));\r\nSet(UserSelectedAppId, GUID(LocalUser.'App Id to open Messages'));\r\nNavigate(If(Not(IsBlank(Param(\"subject\"))), 'New Notification Screen', 'Tray Screen'));"
       },
       {
         "Property": "SizeBreakpoints",
