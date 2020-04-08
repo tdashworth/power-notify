@@ -188,7 +188,7 @@ void ExtractSolution(string connectionString, string solutionName, DirectoryPath
   XrmExportSolution(connectionString, solutionName, tempDirectory, isManaged: false);
   XrmExportSolution(connectionString, solutionName, tempDirectory, isManaged: true);
   SolutionPackagerExtract(tempDirectory.CombineWithFilePath($"{solutionName}.zip"), outputPath, SolutionPackageType.Both);
-  ExtractMsApps(outputPath + "/CanvasApps");
+  // ExtractMsApps(outputPath + "/CanvasApps");
   PrettyJSONFiles(outputPath);
 }
 
@@ -224,7 +224,7 @@ void PackSolution(string projectFolder, string solutionName, string solutionVers
     );
   }
 
-  PackMsApps(projectFolder + "/Extract/CanvasApps");
+  // PackMsApps(projectFolder + "/Extract/CanvasApps");
      
   SolutionPackagerPack(new SolutionPackagerPackSettings(
     Directory(projectFolder).Path.CombineWithFilePath($"bin\\Release\\{solutionName}.zip"),
@@ -232,7 +232,7 @@ void PackSolution(string projectFolder, string solutionName, string solutionVers
     SolutionPackageType.Both,
     Directory(projectFolder).Path.CombineWithFilePath("MappingFile.xml")));
 
-  ExtractMsApps(projectFolder + "/Extract/CanvasApps");
+  // ExtractMsApps(projectFolder + "/Extract/CanvasApps");
 }
 
 void PackMsApps(DirectoryPath searchDirectory) {

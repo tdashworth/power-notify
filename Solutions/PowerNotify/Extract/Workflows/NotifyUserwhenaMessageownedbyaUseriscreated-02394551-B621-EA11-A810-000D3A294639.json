@@ -444,7 +444,7 @@
           "expression": {
             "not": {
               "equals": [
-                "",
+                "@outputs('Retrieve_Owning_User_of_Message')?['body/tda_appidtoopenmessages']",
                 "@null"
               ]
             }
