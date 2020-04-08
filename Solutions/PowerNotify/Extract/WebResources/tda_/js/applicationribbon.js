@@ -96,6 +96,25 @@ var PowerNotify;
                 });
             });
         }
+        function askToSubscribe() {
+            return __awaiter(this, void 0, void 0, function () {
+                var response;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, Xrm.Navigation.openConfirmDialog({
+                                title: "Power Notify",
+                                subtitle: "If you change your mind, you can unsubscribe and configure what you get notified about in the notification tray settings.",
+                                text: "Would you like to recieve notifications via this browser?",
+                                confirmButtonLabel: "Yes",
+                                cancelButtonLabel: "No",
+                            })];
+                        case 1:
+                            response = _a.sent();
+                            return [2 /*return*/, response.confirmed];
+                    }
+                });
+            });
+        }
         function subscribeBrowser() {
             return __awaiter(this, void 0, void 0, function () {
                 var serviceWorker, localSubscription, permissionDenied, error_2;
@@ -114,7 +133,7 @@ var PowerNotify;
                                     .then(function (result) { return result === "denied"; })];
                         case 3:
                             permissionDenied = _a.sent();
-                            if (!(!localSubscription && !permissionDenied)) return [3 /*break*/, 5];
+                            if (!(!localSubscription && !permissionDenied && askToSubscribe())) return [3 /*break*/, 5];
                             return [4 /*yield*/, requestLocalSubscription(serviceWorker)];
                         case 4:
                             _a.sent();

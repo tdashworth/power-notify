@@ -31,6 +31,18 @@ namespace PowerNotify.NotificationTray {
     }
   }
 
+  async function askToSubscribe() {
+    const response = await Xrm.Navigation.openConfirmDialog({
+      title: "Power Notify",
+      subtitle: "If you change your mind, you can unsubscribe and configure what you get notified about in the notification tray settings.",
+      text: "Would you like to recieve notifications via this browser?",
+      confirmButtonLabel: "Yes",
+      cancelButtonLabel: "No",
+    });
+
+    return response.confirmed;
+  }
+
   async function subscribeBrowser() {
     try {
       // Get (and register) service worker
@@ -41,7 +53,7 @@ namespace PowerNotify.NotificationTray {
       const permissionDenied = await serviceWorker.pushManager
         .permissionState({ userVisibleOnly: true })
         .then(result => result === "denied");
-      if (!localSubscription && !permissionDenied) {
+      if (!localSubscription && !permissionDenied && askToSubscribe()) {
         await requestLocalSubscription(serviceWorker);
       }
     } catch (error) {
