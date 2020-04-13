@@ -8,5 +8,6 @@
   <connectortype>1</connectortype>
   <openapidefinition>/Connector/tda_5Fweb-20push-20forwarding-20service_openapidefinition.json</openapidefinition>
   <connectionparameters>/Connector/tda_5Fweb-20push-20forwarding-20service_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/tda_5Fweb-20push-20forwarding-20service_policytemplateinstances.json</policytemplateinstances>
   <iconblob>/Connector/tda_5Fweb-20push-20forwarding-20service_iconblob.Jpeg</iconblob>
 </Connector>

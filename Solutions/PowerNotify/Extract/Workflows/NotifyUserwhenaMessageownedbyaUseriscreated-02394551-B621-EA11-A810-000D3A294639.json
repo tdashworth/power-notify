@@ -100,11 +100,7 @@
                   }
                 }
               },
-              "runAfter": {
-                "User_opted_for_Web_Push": [
-                  "Succeeded"
-                ]
-              },
+              "runAfter": {},
               "expression": {
                 "contains": [
                   "@items('For_each_Channel_Subscription_to_Notify')?['tda_notificationmethod']",
@@ -135,44 +131,11 @@
                   }
                 }
               },
-              "runAfter": {
-                "User_opted_for_Mobile_Push": [
-                  "Succeeded"
-                ]
-              },
-              "expression": {
-                "contains": [
-                  "@items('For_each_Channel_Subscription_to_Notify')?['tda_notificationmethod']",
-                  "@string('751410002')"
-                ]
-              },
-              "type": "If"
-            },
-            "User_opted_for_Email": {
-              "actions": {
-                "Send_an_email_notification_(V3)": {
-                  "runAfter": {},
-                  "type": "OpenApiConnection",
-                  "inputs": {
-                    "host": {
-                      "connectionName": "shared_sendmail",
-                      "operationId": "SendEmailV3",
-                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sendmail"
-                    },
-                    "parameters": {
-                      "request/to": "@{outputs('Retrieve_Owning_User_of_Message')?['body/internalemailaddress']};",
-                      "request/subject": "[Automated Notification] @{triggerOutputs()?['body/subject']}",
-                      "request/text": "<p>@{if(empty(triggerOutputs()?['body/description']), triggerOutputs()?['body/subject'], triggerOutputs()?['body/description'])}<br>\n<br>\n<a href=\"@{variables('Regarding Record URL')}\">@{variables('Regarding Record URL')}</a><br>\n<br>\n<em>This is an automated email, please do not reply. Your recieved this becasue you are subscribed to a channel. To stop, manage your subscriptions on your user record.</em></p>"
-                    },
-                    "authentication": "@parameters('$authentication')"
-                  }
-                }
-              },
               "runAfter": {},
               "expression": {
                 "contains": [
                   "@items('For_each_Channel_Subscription_to_Notify')?['tda_notificationmethod']",
-                  "@string('751410001')"
+                  "@string('751410002')"
                 ]
               },
               "type": "If"
@@ -216,25 +179,47 @@
                         "body": {
                           "subscription": "@json(items('For_each_Web_Push_Subscription')?['tda_subscriptionobject'])",
                           "payload": {
-                            "title": "@{triggerOutputs()?['body/subject']}",
+                            "title": "@triggerOutputs()?['body/subject']",
                             "message": "@triggerOutputs()?['body/description']",
                             "url": "@variables('Regarding Record URL')",
                             "record": {
                               "type": "@{triggerOutputs()?['body/_regardingobjectid_type']}",
-                              "id": "@{triggerOutputs()?['body/_regardingobjectid_value']}"
+                              "id": "@triggerOutputs()?['body/_regardingobjectid_value']"
                             }
                           }
                         },
                         "headers": {
                           "Content-Type": "application/json"
                         },
-                        "path": "/notify",
+                        "path": "/ForwardNotification",
                         "parameters": {
                           "body/subscription": "@json(items('For_each_Web_Push_Subscription')?['tda_subscriptionobject'])",
                           "body/payload/title": "@triggerOutputs()?['body/subject']",
                           "body/payload/message": "@triggerOutputs()?['body/description']",
                           "body/payload/record/type": "@triggerOutputs()?['body/_regardingobjectid_type']",
                           "body/payload/record/id": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Inactivate_the_Subscription_": {
+                      "runAfter": {
+                        "Send_Notification": [
+                          "Failed"
+                        ]
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "tda_webpushsubscriptions",
+                          "recordId": "@items('For_each_Web_Push_Subscription')?['tda_webpushsubscriptionid']",
+                          "item/statecode": 1,
+                          "item/statuscode": 2
                         },
                         "authentication": "@parameters('$authentication')"
                       }
@@ -248,15 +233,40 @@
                   "type": "Foreach"
                 }
               },
-              "runAfter": {
-                "User_opted_for_Email": [
-                  "Succeeded"
-                ]
-              },
+              "runAfter": {},
               "expression": {
                 "contains": [
                   "@items('For_each_Channel_Subscription_to_Notify')?['tda_notificationmethod']",
                   "@string('751410000')"
+                ]
+              },
+              "type": "If"
+            },
+            "User_opted_for_Email": {
+              "actions": {
+                "Send_an_email_notification_(V3)": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_sendmail",
+                      "operationId": "SendEmailV3",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sendmail"
+                    },
+                    "parameters": {
+                      "request/to": "@{outputs('Retrieve_Owning_User_of_Message')?['body/internalemailaddress']};",
+                      "request/subject": "[Automated Notification] @{triggerOutputs()?['body/subject']}",
+                      "request/text": "<p>@{if(empty(triggerOutputs()?['body/description']), triggerOutputs()?['body/subject'], triggerOutputs()?['body/description'])}<br>\n<br>\n<a href=\"@{variables('Regarding Record URL')}\">@{variables('Regarding Record URL')}</a><br>\n<br>\n<em>This is an automated email, please do not reply. Your recieved this becasue you are subscribed to a channel. To stop, manage your subscriptions on your user record.</em></p>"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "expression": {
+                "contains": [
+                  "@items('For_each_Channel_Subscription_to_Notify')?['tda_notificationmethod']",
+                  "@string('751410001')"
                 ]
               },
               "type": "If"

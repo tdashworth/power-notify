@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.1.0.15340" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.1.0.15635" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>PowerNotify</UniqueName>
     <LocalizedNames>
@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="This is an all-in-one solution for notifying your PowerApps users giving them the control they deserve in a distraction filled world. " languagecode="1033" />
     </Descriptions>
-    <Version>0.1.37.0</Version>
+    <Version>0.1.38.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>tdashworth</UniqueName>
