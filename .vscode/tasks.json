@@ -115,7 +115,8 @@
       "description": "The solution to execute the task for.",
       "type": "pickString",
       "options": [
-        "PowerNotify"
+        "PowerNotify",
+        "PowerNotify_Samples"
       ]
     }
   ]

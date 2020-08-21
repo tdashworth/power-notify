@@ -2,6 +2,7 @@
 <configdatastorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" installsampledata="false" waitforsampledatatoinstall="true" agentdesktopzipfile="" agentdesktopexename="" crmmigdataimportfile="">
   <solutions>
     <configsolutionfile deleteonly="false" forceUpgrade="false" overwriteunmanagedcustomizations="true" publishworkflowsandactivateplugins="true" solutionpackagefilename="PowerNotify/PowerNotify_managed.zip" useAsync="true"/>
+    <configsolutionfile deleteonly="false" forceUpgrade="false" overwriteunmanagedcustomizations="true" publishworkflowsandactivateplugins="true" solutionpackagefilename="PowerNotify_Samples/PowerNotify_Samples_managed.zip" useAsync="true"/>
   </solutions>
   <filestoimport/>
   <filesmapstoimport/>
