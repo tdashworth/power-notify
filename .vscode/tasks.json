@@ -107,6 +107,37 @@
         "-solution=${input:solution}"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "Azure Func: host start",
+      "type": "func",
+      "command": "host start",
+      "problemMatcher": "$func-watch",
+      "isBackground": true,
+      "dependsOn": "npm build",
+      "options": {"cwd": "./src/azure"}
+    },
+    {
+      "type": "shell",
+      "label": "Azure Func:npm build",
+      "command": "npm run build",
+      "dependsOn": "npm install",
+      "problemMatcher": "$tsc",
+      "options": {"cwd": "./src/azure"}
+    },
+    {
+      "type": "shell",
+      "label": "Azure Func: npm install",
+      "command": "npm install",
+      "options": {"cwd": "./src/azure"}
+    },
+    {
+      "type": "shell",
+      "label": "Azure Func: npm prune",
+      "command": "npm prune --production",
+      "dependsOn": "npm build",
+      "problemMatcher": [],
+      "options": {"cwd": "./src/azure"}
     }
   ],
   "inputs": [

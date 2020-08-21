@@ -9,7 +9,8 @@
 		"esbenp.prettier-vscode",
 		"ms-dotnettools.csharp",
 		"eamodio.gitlens",
-		"ms-vscode.vscode-typescript-tslint-plugin"
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"ms-azuretools.vscode-azurefunctions"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
