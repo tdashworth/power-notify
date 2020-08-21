@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{fb7d4a14-df62-ea11-a811-000d3aba364d}</WebResourceId>
+  <Name>tda_/js/applicationribbon.js</Name>
+  <DisplayName>Application Ribbon Script</DisplayName>
+  <Description>A set of scripts for the application ribbon to open the Notification Tray and subscribe the user for Web Push notifications.  </Description>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>0.1.23.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/tda_jsapplicationribbonjsFB7D4A14-DF62-EA11-A811-000D3ABA364D</FileName>
+</WebResource>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition IntroducedVersion="1.0.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SchemaName>tda_DefaultAppId</SchemaName>
+  <IsRequired>0</IsRequired>
+  <Type>100000000</Type>
+  <DefaultValue></DefaultValue>
+  <DisplayName>
+    <LocalizedNames>
+      <LocalizedName description="Default App Id" languagecode="1033" />
+    </LocalizedNames>
+  </DisplayName>
+  <Description>
+    <LocalizedNames>
+      <LocalizedName description="The App Id of the model-driven app your users predominantly work in. This will be used to open clicked notifications in a meaningful app." languagecode="1033" />
+    </LocalizedNames>
+  </Description>
+</Definition>

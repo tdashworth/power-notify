@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{8bf3c747-a747-44da-bb70-85b158c9781a}</savedqueryid>
+    <layoutxml>
+      <grid name="tda_notificationsubscriptions" jump="tda_name" select="1" icon="1" preview="1">
+        <row name="tda_notificationsubscription" id="tda_notificationsubscriptionid">
+          <cell name="tda_notificationchannel" width="300" />
+          <cell name="tda_notificationmethod" width="300" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="tda_notificationsubscription">
+          <attribute name="tda_notificationsubscriptionid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="tda_notificationchannel" />
+          <attribute name="tda_notificationmethod" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Notification Subscription Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

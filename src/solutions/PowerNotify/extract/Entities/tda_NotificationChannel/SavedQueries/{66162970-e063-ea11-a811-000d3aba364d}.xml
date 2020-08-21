@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{66162970-e063-ea11-a811-000d3aba364d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="tda_name" select="1" icon="1" preview="1">
+        <row name="result" id="tda_notificationchannelid">
+          <cell name="tda_name" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="tda_notificationchannel">
+          <attribute name="tda_name" />
+          <attribute name="tda_notificationchannelid" />
+          <filter>
+            <condition entityname="outer" attribute="tda_notificationsubscriptionid" operator="null" />
+          </filter>
+          <link-entity name="tda_notificationsubscription" from="tda_notificationchannel" to="tda_notificationchannelid" link-type="outer" alias="outer">
+            <attribute name="tda_name" />
+            <attribute name="tda_notificationchannel" />
+            <attribute name="ownerid" />
+            <filter>
+              <condition attribute="ownerid" operator="eq-userid" />
+            </filter>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.1.26.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Active Unsubscribed Notification Channels " languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A list of Channels the User is not subscribed to. " languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

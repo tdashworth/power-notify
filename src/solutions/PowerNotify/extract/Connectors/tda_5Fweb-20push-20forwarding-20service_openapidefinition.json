@@ -1,0 +1,151 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Default title",
+    "description": "A forwarding service for web push notification. This can be updated with your own server and authentication.",
+    "version": "1.0"
+  },
+  "host": "web-push-notifications-forwarding-server.azurewebsites.net",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/key": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "description": "key",
+                  "title": "Public Key",
+                  "format": "password"
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "Content-Type",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "summary": "Get Key",
+        "operationId": "get-key",
+        "description": "Retrieves the public key setup in the VAPID credentials.",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    },
+    "/notify": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "string"
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "Content-Type",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "summary": "Send Notification",
+        "description": "Forwards the notification to the appropriate endpoint in the subscription.",
+        "operationId": "notify",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "subscription": {
+                  "type": "object",
+                  "description": "subscription"
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "message",
+                      "title": "Message"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "title",
+                      "title": "Title"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "URL to open on click",
+                      "title": "URL"
+                    },
+                    "record": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "description": "type",
+                          "title": "Regarding Record Type"
+                        },
+                        "id": {
+                          "type": "string",
+                          "description": "id",
+                          "title": "Regarding Record ID"
+                        }
+                      },
+                      "description": "record"
+                    }
+                  },
+                  "description": "payload",
+                  "required": [
+                    "title"
+                  ]
+                }
+              },
+              "required": [
+                "payload",
+                "subscription"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}

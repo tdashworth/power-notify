@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{baaa9ef5-b9a8-41f9-98c2-38b3de512124}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="tda_friendlyname" select="1" icon="1" preview="1">
+        <row name="result" id="tda_webpushsubscriptionid">
+          <cell name="ownerid" width="272" />
+          <cell name="tda_friendlyname" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="tda_webpushsubscription">
+          <attribute name="tda_webpushsubscriptionid" />
+          <attribute name="tda_friendlyname" />
+          <attribute name="createdon" />
+          <order attribute="tda_friendlyname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="tda_friendlyname" operator="like" value="{0}" />
+          </filter>
+          <attribute name="ownerid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Web Push Subscriptions" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

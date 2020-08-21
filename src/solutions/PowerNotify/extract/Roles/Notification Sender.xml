@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{696ef5ae-710b-ea11-a811-000d3a86b423}" name="Notification Sender" isinherited="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendActivity" level="Local" />
+    <RolePrivilege name="prvAppendtda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvAppendToActivity" level="Local" />
+    <RolePrivilege name="prvAppendTotda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvAssignActivity" level="Local" />
+    <RolePrivilege name="prvAssigntda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvCreateActivity" level="Local" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvCreatetda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvDeleteActivity" level="Local" />
+    <RolePrivilege name="prvDeletetda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvReadActivity" level="Local" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadSdkMessage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvReadtda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvShareActivity" level="Local" />
+    <RolePrivilege name="prvSharetda_NotificationChannel" level="Global" />
+    <RolePrivilege name="prvWriteActivity" level="Local" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+    <RolePrivilege name="prvWritetda_NotificationChannel" level="Global" />
+  </RolePrivileges>
+</Role>

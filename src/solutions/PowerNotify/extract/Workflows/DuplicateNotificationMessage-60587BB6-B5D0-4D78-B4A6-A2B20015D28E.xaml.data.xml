@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{60587bb6-b5d0-4d78-b4a6-a2b20015d28e}" Name="Duplicate Notification Message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/DuplicateNotificationMessage-60587BB6-B5D0-4D78-B4A6-A2B20015D28E.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>3</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <CreateStage>40</CreateStage>
+  <RunAs>1</RunAs>
+  <SdkMessageId>{fd8fc0af-b971-ea11-a812-000d3aba364d}</SdkMessageId>
+  <UniqueName>DuplicateNotificationMessage</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>0.1.27.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <FormId>{00000000-0000-0000-0000-000000000000}</FormId>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <PrimaryEntity>tda_NotificationMessage</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Duplicate Notification Message" />
+  </LocalizedNames>
+</Workflow>

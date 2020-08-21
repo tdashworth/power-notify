@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <CustomAction Id="tda.ApplicationRibbon.NotificationTray.Button.CustomAction" Location="Mscrm.GlobalTab.New.Controls._children" Sequence="25">
+      <CommandUIDefinition>
+        <Button Command="tda.ApplicationRibbon.NotificationTray.Command" Id="tda.ApplicationRibbon.NotificationTray.Button" Image32by32="" Image16by16="" LabelText="$LocLabels:tda.ApplicationRibbon.NotificationTray.Button.LabelText" Sequence="25" TemplateAlias="isv" ToolTipTitle="$LocLabels:tda.ApplicationRibbon.NotificationTray.Button.ToolTipTitle" ToolTipDescription="$LocLabels:tda.ApplicationRibbon.NotificationTray.Button.ToolTipDescription" ModernImage="$webresource:tda_NotificationBell.svg" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="tda.ApplicationRibbon.NotificationTray.Command">
+      <EnableRules>
+        <EnableRule Id="tda.ApplicationRibbon.NotificationTray.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="PowerNotify.NotificationTray.onClick" Library="$webresource:tda_/js/applicationribbon.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules>
+      <EnableRule Id="tda.ApplicationRibbon.NotificationTray.EnableRule">
+        <CustomRule FunctionName="PowerNotify.NotificationTray.setBadge" Library="$webresource:tda_/js/applicationribbon.js" Default="true" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="tda.ApplicationRibbon.NotificationTray.Button.LabelText">
+      <Titles>
+        <Title description="Notification Tray" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="tda.ApplicationRibbon.NotificationTray.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Opens a list of notifications store in the notification tray" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="tda.ApplicationRibbon.NotificationTray.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Notification Tray" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>
