@@ -1,1 +1,160 @@
-{"properties":{"connectionReferences":{"shared_commondataserviceforapps":{"runtimeSource":"embedded","connection":{},"api":{"name":"shared_commondataserviceforapps"}}},"definition":{"$schema":"https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#","contentVersion":"1.0.0.0","parameters":{"$connections":{"defaultValue":{},"type":"Object"},"$authentication":{"defaultValue":{},"type":"SecureObject"}},"triggers":{"When_a_Contact_is_updated":{"type":"OpenApiConnectionWebhook","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"SubscribeWebhookTrigger","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"subscriptionRequest/message":3,"subscriptionRequest/entityname":"contact","subscriptionRequest/scope":4},"authentication":"@parameters('$authentication')"}}},"actions":{"Get_Followers_of_the_Contact":{"runAfter":{},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"ListRecords","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"postfollows","$filter":"_regardingobjectid_value eq @{triggerOutputs()?['body/contactid']} and _ownerid_value ne @{triggerOutputs()?['body/_ownerid_value']}"},"authentication":"@parameters('$authentication')"}},"Get_Notification_Channel":{"runAfter":{"Get_Followers_of_the_Contact":["Succeeded"]},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"ListRecords","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"tda_notificationchannels","$filter":"tda_name eq 'Following Contact Updated' and statecode eq 1","$top":1},"authentication":"@parameters('$authentication')"}},"Get_Contact's_entity_image":{"runAfter":{"Get_Notification_Channel":["Succeeded"]},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"GetEntityFileImageFieldContent","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"contacts","recordId":"@triggerOutputs()?['body/accountid']","fileImageFieldName":"entityimage"},"authentication":"@parameters('$authentication')"}},"Get_modifying_User":{"runAfter":{"Get_Contact's_entity_image":["Succeeded"]},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"GetItem","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"systemusers","recordId":"@triggerOutputs()?['body/_modifiedby_value']","$select":"fullname"},"authentication":"@parameters('$authentication')"}},"Notify_each_follower":{"foreach":"@outputs('Get_Followers_of_the_Contact')?['body/value']","actions":{"Create_a_Notification_Message":{"runAfter":{},"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_commondataserviceforapps","operationId":"CreateRecord","apiId":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"},"parameters":{"entityName":"tda_notificationmessages","item/tda_NotificationChannel_tda_NotificationMessage@odata.bind":"@outputs('Get_Notification_Channel')?['body/value']?[0]?['tda_notificationchannelid']","item/subject":"The Contact '@{triggerOutputs()?['body/fullname']}' has just been updated","item/description":"The Contact '@{triggerOutputs()?['body/fullname']}' has been updated by @{outputs('Get_modifying_User')?['body/fullname']} which you follow. ","item/entityimage":"@outputs('Get_Contact''s_entity_image')?['body']","item/ownerid_tda_notificationmessage@odata.bind":"@items('Notify_each_follower')?['_ownerid_value']","item/regardingobjectid_contact_tda_notificationmessage@odata.bind":"@triggerOutputs()?['body/contactid']"},"authentication":"@parameters('$authentication')"}}},"runAfter":{"Get_modifying_User":["Succeeded"]},"type":"Foreach"}},"outputs":{}}},"schemaVersion":"1.0.0.0"}
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {},
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_Contact_is_updated": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "contact",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Get_Followers_of_the_Contact": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "postfollows",
+              "$filter": "_regardingobjectid_value eq @{triggerOutputs()?['body/contactid']} and _ownerid_value ne @{triggerOutputs()?['body/_ownerid_value']}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_Notification_Channel": {
+          "runAfter": {
+            "Get_Followers_of_the_Contact": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "tda_notificationchannels",
+              "$filter": "tda_name eq 'Following Contact Updated' and statecode eq 1",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_Contact's_entity_image": {
+          "runAfter": {
+            "Get_Notification_Channel": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetEntityFileImageFieldContent",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "recordId": "@triggerOutputs()?['body/accountid']",
+              "fileImageFieldName": "entityimage"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_modifying_User": {
+          "runAfter": {
+            "Get_Contact's_entity_image": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "systemusers",
+              "recordId": "@triggerOutputs()?['body/_modifiedby_value']",
+              "$select": "fullname"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Notify_each_follower": {
+          "foreach": "@outputs('Get_Followers_of_the_Contact')?['body/value']",
+          "actions": {
+            "Create_a_Notification_Message": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "tda_notificationmessages",
+                  "item/tda_NotificationChannel_tda_NotificationMessage@odata.bind": "@{outputs('Get_Notification_Channel')?['body/value']?[0]?['tda_notificationchannelid']}",
+                  "item/subject": "The Contact '@{triggerOutputs()?['body/fullname']}' has just been updated",
+                  "item/description": "The Contact '@{triggerOutputs()?['body/fullname']}' has been updated by @{outputs('Get_modifying_User')?['body/fullname']} which you follow. ",
+                  "item/entityimage": "@outputs('Get_Contact''s_entity_image')?['body']",
+                  "item/ownerid_tda_notificationmessage@odata.bind": "@{items('Notify_each_follower')?['_ownerid_value']}",
+                  "item/regardingobjectid_contact_tda_notificationmessage@odata.bind": "{triggerOutputs()?['body/contactid']}"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Get_modifying_User": [
+              "Succeeded"
+            ]
+          },
+          "type": "Foreach"
+        }
+      },
+      "outputs": {}
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

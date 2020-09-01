@@ -187,6 +187,14 @@ void ExtractSolution(string connectionString, string solutionName, DirectoryPath
   XrmExportSolution(connectionString, solutionName, tempDirectory, isManaged: false);
   XrmExportSolution(connectionString, solutionName, tempDirectory, isManaged: true);
   SolutionPackagerExtract(tempDirectory.CombineWithFilePath($"{solutionName}.zip"), outputPath, SolutionPackageType.Both);
+  PrettyJSONFiles(outputPath);
+}
+
+void PrettyJSONFiles(DirectoryPath directory) {
+  foreach (var file in GetFiles(directory + $"/**/*.json")) {
+    Information("Prettying JSON file: " + file);
+    SerializeJsonToPrettyFile(file, DeserializeJsonFromFile<object>(file)); 
+  }
 }
 
 void ExportData(DirectoryPath extractFolder, FilePath exportConfigPath) {
