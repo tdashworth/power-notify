@@ -23,7 +23,7 @@
         }
       },
       "triggers": {
-        "When_an_Account_is_updated": {
+        "When_a_Task_is_created_or_assigned": {
           "type": "OpenApiConnectionWebhook",
           "inputs": {
             "host": {
@@ -32,15 +32,36 @@
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
-              "subscriptionRequest/message": 3,
-              "subscriptionRequest/entityname": "account",
-              "subscriptionRequest/scope": 4
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "task",
+              "subscriptionRequest/scope": 2,
+              "subscriptionRequest/filteringattributes": "ownerid",
+              "subscriptionRequest/runas": 3
             },
             "authentication": "@parameters('$authentication')"
           }
         }
       },
       "actions": {
+        "Check_if_Owner_and_Modifier_are_the_same": {
+          "actions": {
+            "Owner_and_Modifier_are_the_same": {
+              "runAfter": {},
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {},
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/_ownerid_value']",
+              "@triggerOutputs()?['body/_modifiedby_value']"
+            ]
+          },
+          "type": "If"
+        },
         "Get_Notification_Channel": {
           "runAfter": {
             "Check_if_Owner_and_Modifier_are_the_same": [
@@ -56,8 +77,29 @@
             },
             "parameters": {
               "entityName": "tda_notificationchannels",
-              "$filter": "tda_name eq 'Owning Account Updated' and statecode eq 0",
+              "$filter": "tda_name eq 'Task Assigned' and statecode eq 0",
               "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_modifying_User": {
+          "runAfter": {
+            "Check_if_Notification_Channel_was_found": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "systemusers",
+              "recordId": "@triggerOutputs()?['body/_modifiedby_value']",
+              "$select": "fullname"
             },
             "authentication": "@parameters('$authentication')"
           }
@@ -78,72 +120,9 @@
             "parameters": {
               "entityName": "tda_notificationmessages",
               "item/tda_NotificationChannel_tda_NotificationMessage@odata.bind": "/tda_notificationchannels(@{outputs('Get_Notification_Channel')?['body/value']?[0]?['tda_notificationchannelid']})",
-              "item/subject": "The Account '@{triggerOutputs()?['body/name']}' has just been updated",
-              "item/description": "The Account '@{triggerOutputs()?['body/name']}' has been updated by @{outputs('Get_modifying_User')?['body/fullname']} which you own. ",
-              "item/entityimage": "@outputs('Get_Account''s_entity_image')?['body']",
-              "item/ownerid_tda_notificationmessage@odata.bind": "/@{triggerOutputs()?['body/_ownerid_type']}(@{triggerOutputs()?['body/_ownerid_value']})",
-              "item/regardingobjectid_account_tda_notificationmessage@odata.bind": "/accounts(@{triggerOutputs()?['body/accountid']})"
-            },
-            "authentication": "@parameters('$authentication')"
-          }
-        },
-        "Get_Account's_entity_image": {
-          "runAfter": {
-            "Check_if_Notification_Channel_was_found": [
-              "Succeeded"
-            ]
-          },
-          "type": "OpenApiConnection",
-          "inputs": {
-            "host": {
-              "connectionName": "shared_commondataserviceforapps",
-              "operationId": "GetEntityFileImageFieldContent",
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-            },
-            "parameters": {
-              "entityName": "accounts",
-              "recordId": "@triggerOutputs()?['body/accountid']",
-              "fileImageFieldName": "entityimage"
-            },
-            "authentication": "@parameters('$authentication')"
-          }
-        },
-        "Check_if_Owner_and_Modifier_are_the_same": {
-          "actions": {
-            "Owner_and_Modifier_are_the_same": {
-              "runAfter": {},
-              "type": "Terminate",
-              "inputs": {
-                "runStatus": "Succeeded"
-              }
-            }
-          },
-          "runAfter": {},
-          "expression": {
-            "equals": [
-              "@triggerOutputs()?['body/_ownerid_value']",
-              "@triggerOutputs()?['body/_modifiedby_value']"
-            ]
-          },
-          "type": "If"
-        },
-        "Get_modifying_User": {
-          "runAfter": {
-            "Get_Account's_entity_image": [
-              "Succeeded"
-            ]
-          },
-          "type": "OpenApiConnection",
-          "inputs": {
-            "host": {
-              "connectionName": "shared_commondataserviceforapps",
-              "operationId": "GetItem",
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-            },
-            "parameters": {
-              "entityName": "systemusers",
-              "recordId": "@triggerOutputs()?['body/_modifiedby_value']",
-              "$select": "fullname"
+              "item/subject": "You've just been assigned a task",
+              "item/description": "The Task '@{triggerOutputs()?['body/subject']}' has been assigned to you by @{outputs('Get_modifying_User')?['body/fullname']}. ",
+              "item/ownerid_tda_notificationmessage@odata.bind": "/@{triggerOutputs()?['body/_ownerid_type']}(@{triggerOutputs()?['body/_ownerid_value']})"
             },
             "authentication": "@parameters('$authentication')"
           }

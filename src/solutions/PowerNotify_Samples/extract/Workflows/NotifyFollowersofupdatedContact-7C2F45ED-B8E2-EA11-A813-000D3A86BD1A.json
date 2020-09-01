@@ -72,7 +72,7 @@
             },
             "parameters": {
               "entityName": "tda_notificationchannels",
-              "$filter": "tda_name eq 'Following Contact Updated' and statecode eq 1",
+              "$filter": "tda_name eq 'Following Contact Updated' and statecode eq 0",
               "$top": 1
             },
             "authentication": "@parameters('$authentication')"
@@ -80,7 +80,7 @@
         },
         "Get_Contact's_entity_image": {
           "runAfter": {
-            "Get_Notification_Channel": [
+            "Check_if_Notification_Channel_was_found": [
               "Succeeded"
             ]
           },
@@ -134,12 +134,12 @@
                 },
                 "parameters": {
                   "entityName": "tda_notificationmessages",
-                  "item/tda_NotificationChannel_tda_NotificationMessage@odata.bind": "@{outputs('Get_Notification_Channel')?['body/value']?[0]?['tda_notificationchannelid']}",
+                  "item/tda_NotificationChannel_tda_NotificationMessage@odata.bind": "/tda_notificationchannels(@{outputs('Get_Notification_Channel')?['body/value']?[0]?['tda_notificationchannelid']})",
                   "item/subject": "The Contact '@{triggerOutputs()?['body/fullname']}' has just been updated",
                   "item/description": "The Contact '@{triggerOutputs()?['body/fullname']}' has been updated by @{outputs('Get_modifying_User')?['body/fullname']} which you follow. ",
                   "item/entityimage": "@outputs('Get_Contact''s_entity_image')?['body']",
-                  "item/ownerid_tda_notificationmessage@odata.bind": "@{items('Notify_each_follower')?['_ownerid_value']}",
-                  "item/regardingobjectid_contact_tda_notificationmessage@odata.bind": "{triggerOutputs()?['body/contactid']}"
+                  "item/ownerid_tda_notificationmessage@odata.bind": "/@{items('Notify_each_follower')?['_ownerid_type']}(@{items('Notify_each_follower')?['_ownerid_value']})",
+                  "item/regardingobjectid_contact_tda_notificationmessage@odata.bind": "/contacts(@{triggerOutputs()?['body/contactid']})"
                 },
                 "authentication": "@parameters('$authentication')"
               }
@@ -151,6 +151,33 @@
             ]
           },
           "type": "Foreach"
+        },
+        "Check_if_Notification_Channel_was_found": {
+          "actions": {
+            "No_Notification_Channel_found": {
+              "runAfter": {},
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "code": "NotificationChannelNotFound",
+                  "message": "No Notification Channel found"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Get_Notification_Channel": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@length(outputs('Get_Notification_Channel')?['body/value'])",
+              0
+            ]
+          },
+          "type": "If"
         }
       },
       "outputs": {}
