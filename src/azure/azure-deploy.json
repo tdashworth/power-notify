@@ -27,6 +27,27 @@
         "metadata": {
           "description": "Location for all resources."
         }
+      },
+      "vapidSubject": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "description": "VAPID Subject for Web Push."
+        }
+      },
+      "vapidPublicKey": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "description": "VAPID Public Key for Web Push."
+        }
+      },
+      "vapidPrivateKey": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "description": "VAPID Private Key for Web Push."
+        }
       }
     },
     "variables": {
@@ -100,8 +121,16 @@
                 "value": "[reference(resourceId('microsoft.insights/components', variables('applicationInsightsName')), '2018-05-01-preview').InstrumentationKey]"
               },
               {
-                "name": "FUNCTIONS_WORKER_RUNTIME",
-                "value": "node"
+                "name": "vapidSubject",
+                "value": "[parameters('vapidSubject')]"
+              },
+              {
+                "name": "vapidPublicKey",
+                "value": "[parameters('vapidPublicKey')]"
+              },
+              {
+                "name": "vapidPrivateKey",
+                "value": "[parameters('vapidPrivateKey')]"
               }
             ]
           }
