@@ -22,15 +22,14 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             status: result.statusCode,
             headers: result.headers,
             body: result.body,
-        }
+        };
 
     } catch (error) {
-        context.log(error)
+        context.log.error(error);
         context.res = {
             status: 500,
-            headers: { "content-type": "application/json" },
-            body: error,
-        }
+            body: error.message
+        };
     }
 };
 

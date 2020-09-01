@@ -114,14 +114,14 @@
       "command": "host start",
       "problemMatcher": "$func-watch",
       "isBackground": true,
-      "dependsOn": "npm build",
+      "dependsOn": "Azure Func:npm build",
       "options": {"cwd": "./src/azure"}
     },
     {
       "type": "shell",
       "label": "Azure Func:npm build",
       "command": "npm run build",
-      "dependsOn": "npm install",
+      "dependsOn": "Azure Func: npm install",
       "problemMatcher": "$tsc",
       "options": {"cwd": "./src/azure"}
     },
