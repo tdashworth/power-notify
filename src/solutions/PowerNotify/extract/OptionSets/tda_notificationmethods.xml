@@ -10,7 +10,7 @@
   <options>
     <option value="751410000">
       <labels>
-        <label description="Web Push" languagecode="1033" />
+        <label description="Web" languagecode="1033" />
       </labels>
     </option>
     <option value="751410001">
@@ -25,7 +25,7 @@
     </option>
     <option value="751410003">
       <labels>
-        <label description="Mobile Push" languagecode="1033" />
+        <label description="Mobile" languagecode="1033" />
       </labels>
     </option>
   </options>
