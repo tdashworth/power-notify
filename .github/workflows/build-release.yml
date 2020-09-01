@@ -1,0 +1,29 @@
+name: "Build and Release"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Build Package (Cake)
+      run: powershell -ExecutionPolicy ByPass -File build.ps1 -Target Default -Verbosity Diagnostic;
+
+    - name: "Create Artifact: Package Deployer"
+      uses: actions/upload-artifact@v2
+      with:
+        name: Package Deployer
+        path: deploy/bin/Release
+
+    - name: "Create Artifact: Just solutions"
+      uses: actions/upload-artifact@v2
+      with:
+        name: Solutions
+        path: deploy/bin/Release/PkgFolder/**/*.zip
