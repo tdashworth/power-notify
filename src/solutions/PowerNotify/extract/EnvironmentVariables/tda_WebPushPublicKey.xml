@@ -3,7 +3,7 @@
   <SchemaName>tda_WebPushPublicKey</SchemaName>
   <IsRequired>0</IsRequired>
   <Type>100000000</Type>
-  <DefaultValue>BJblRtV--t2qM1-YujmdApByAGvkQKEGJCxE8ZKYqy1cBqm_ySlh5w2ntkQY6fiTyZT51umEvZo0xitDWTXA9UY</DefaultValue>
+  <DefaultValue></DefaultValue>
   <DisplayName>
     <LocalizedNames>
       <LocalizedName description="Web Push Public Key" languagecode="1033" />
