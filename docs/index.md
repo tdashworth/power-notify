@@ -1,4 +1,4 @@
-Power Notify is a Power Apps solution and designed to be reusable on any Power Apps project through simply installing and following the setup guide [here](How-to-set-up-Power-Notify). 
+Power Notify is a Power Apps solution and designed to be reusable on any Power Apps project through simply installing and following the setup guide [here](./Installation). 
 
 # Problem
 The problem Power Notify is trying to solve is one faced by many projects I've come across, informing their internal users when something in the system has happened. This could be something actionable like your approval is required or informative like something you own/follow was updated. Traditionally, this has been achieved through emails, which from experience can quickly annoy the users reverting to a mailbox rule to wick them away for the user's attention. - LP (reword slightly)
@@ -16,6 +16,6 @@ How Power Notify solves this is by decoupling the system events to inform a user
 - Receive notifications via browser/desktop, mobile, email, within the app itself
 
 # Next steps
-- [Installation](/installation)
-- [How to use](/how-to-use)
-- [Technical Design](/technical-design)
+- [Installation](./Installation)
+- [How to use](./How-to-use-as-an-end-user)
+- [Technical Design](./Technical-design)
