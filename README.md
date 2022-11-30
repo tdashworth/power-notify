@@ -1,5 +1,8 @@
 # PowerNotify
 
+> ⚠ ⚠ This project is no longer being maintained.
+> Web Push (Desktop notification) are no longer possible due to an expected change in Model Driven Apps.
+
 ## Introduction
 
 A Power Apps solution to decouple system events and notifying system users. See more on [this](https://medium.com/capgemini-microsoft-team/power-notify-the-modern-way-to-notify-power-app-users-c5d0ab852840?source=friends_link&sk=8d513b4b1b8d30641db73a436af4b82f) blog post.
